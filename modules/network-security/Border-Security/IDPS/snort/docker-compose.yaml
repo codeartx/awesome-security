@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  snort3:
+    image: alexandreoda/snort
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./asset/etc/snort:/etc/snort
+      - /etc/localtime:/etc/localtime:ro

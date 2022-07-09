@@ -1,0 +1,10 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-game.rules,v 1.8 2005/11/10 14:15:43 akirk Exp $
+
+alert udp $EXTERNAL_NET any -> $HOME_NET 2305 (msg:"COMMUNITY GAME Halocon Denial of Service Empty UDP Packet"; dsize:0; classtype:attempted-dos; reference:bugtraq,12281; sid:100000102; rev:1;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 7649 (msg:"COMMUNITY GAME Breed Game Server Denial of Service Empty UDP Packet"; dsize:0; classtype:attempted-dos; reference:bugtraq,12262; sid:100000103; rev:1;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 27777 (msg:"COMMUNITY GAME Amp II 3D Game Server Denial of Service Empty UDP Packet"; dsize:0; classtype:attempted-dos; reference:bugtraq,12192; sid:100000104; rev:1;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 29000 (msg:"COMMUNITY GAME FlatFrag game dos exploit"; fragbits:D; id:1; content:"|61 61 61|"; dsize:99; reference:bugtraq,15287; reference:cve,2005-3492; classtype:attempted-dos; sid:100000181; rev:1;)
+alert udp $EXTERNAL_NET any <> $HOME_NET 7000 (msg:"COMMUNITY GAME Battle Carry attempt"; dsize:>8192; content:"|00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00|"; depth:16; reference:cve,2005-3493; reference:bugtraq,15282; classtype:attempted-dos; sid:100000182; rev:1;)

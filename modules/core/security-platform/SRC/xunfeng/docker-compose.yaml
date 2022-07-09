@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  # http://localhost:8000/login
+  # admin/xunfeng321
+  xunfeng:
+    image: ysrc/xunfeng
+    ports:
+      - 8000:80

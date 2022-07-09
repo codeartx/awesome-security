@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+  fail2ban:
+    image: crazymax/fail2ban:0.11.2
+    container_name: fail2ban
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - "./conf/nginx-not-found.conf:/etc/fail2ban/filter.d/nginx-not-found.conf"
+      - "./conf/jail.conf:/etc/fail2ban/jail.conf"
+      - "./conf/jail.local:/etc/fail2ban/jail.local"
+      - "./conf/access.log:/home/wwwlogs/access.log"
+      - "./data:/data"
+      - "/var/log:/var/log:ro"
+    environment:
+      - F2B_LOG_TARGET=STDOUT
+      - F2B_LOG_LEVEL=INFO
+      - F2B_DB_PURGE_AGE=1d

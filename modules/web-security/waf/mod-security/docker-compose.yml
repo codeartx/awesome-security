@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  backend:
+    image: docker.io/kennethreitz/httpbin
+    ports:
+      - "80"
+
+  waf:
+    image: huafeihuao0/modsecurity-httpd:3.3
+    environment:
+      BACKEND: http://backend
+      PARANOIA: 4
+    ports:
+      - "8080:8080"
+    links:
+      - backend

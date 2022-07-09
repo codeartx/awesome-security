@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./asset/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_DATABASE=linglong
+      - MYSQL_ROOT_PASSWORD=linglong8s
+    ports:
+      - "3305:3306"
+    command: [
+        '--character-set-server=utf8mb4',
+        '--collation-server=utf8mb4_unicode_ci',
+    ]
+
+  server:
+    container_name: 'linglong-server'
+    image: huafeihuao0/linglong:bedbe49
+    ports:
+      - "18000:18000"
+    depends_on:
+      - mysql
+    environment:
+      - TZ=Asia/Shanghai
+
+# linglong/linglong5s
+  web:
+    image: huafeihuao0/linglong-web:bedbe49
+    volumes:
+      - ./asset/web:/usr/share/nginx/html
+    container_name: 'linglong-web'
+    ports:
+      - 8001:8001
+    depends_on:
+      - server

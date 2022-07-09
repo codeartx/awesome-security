@@ -1,0 +1,27 @@
+  version: '3'
+
+  services:
+    # 管理后台
+    jxwaf-mini-server:
+      hostname: jxwaf-mini-server
+      image: jxwaf/jxwaf-mini-server:v20201104
+      ports:
+        - 8080:80
+
+    # waf
+    jxwaf:
+      image: jxwaf/jxwaf:v20201104
+      environment:
+        # 在管理后台，获取【全局配置】中的API_KEY、API_PASSWD
+        - JXWAF_API_KEY=cc75ea20-a063-46e9-90c7-0b72f68b1ae8
+        - JXWAF_API_PASSWD=afb8dbca-7437-4793-b579-56d9b52262c1
+        - WAF_UPDATE_WEBSITE=http://192.168.240.2
+      ports:
+        - 8888:80
+
+    # 用户名：admin,密码：admin123
+    web-dvwa:
+      container_name: web-dvwa
+      image: vulnerables/web-dvwa # https://hub.docker.com/r/vulnerables/web-dvwa
+      ports:
+        - 8000:80

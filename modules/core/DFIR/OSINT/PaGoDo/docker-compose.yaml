@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  pagodo:
+    image: secsi/pagodo:2.2.1
+    entrypoint: python pagodo.py -d example.com -g dorks/all_google_dorks.txt -l

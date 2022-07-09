@@ -1,0 +1,14 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-smtp.rules,v 1.9 2006/07/14 13:36:01 akirk Exp $
+
+alert tcp $EXTERNAL_NET any -> $SMTP_SERVERS 25 (msg:"COMMUNITY SMTP Hydra Activity Detected"; flow:to_server,established; content:"hydra"; nocase; pcre:"/^(EH|HE)LO\s+hydra\x0D\x0A/smi"; reference:url,www.thc.org/releases.php; classtype:misc-attack; sid:100000167; rev:1;)
+#Rule submitted by rmkml
+alert tcp $EXTERNAL_NET any -> $SMTP_SERVERS 25 (msg:"COMMUNITY SMTP Gnu Mailman utf8 attachement access"; flow:to_server,established; content:"Content-Disposition|3A 20|attachement"; nocase; content:"filename|2A 3D|utf|2D|8"; nocase; content:"Content-Transfer-Encoding|3A 20|base64"; nocase; reference:bugtraq,15408; reference:cve,2005-3573; reference:url,www.osvdb.org/displayvuln.php?osvdb_id=20819; classtype:attempted-dos; sid:100000191; rev:1;)
+alert tcp $EXTERNAL_NET any -> $SMTP_SERVERS 25 (msg:"COMMUNITY SMTP MIME-Type ms-tnef access"; flow:to_server,established; content:"Content-Type|3A|"; nocase; content:"application/ms-tnef"; nocase; reference:bugtraq,16197; reference:cve,2006-0002; reference:url,www.microsoft.com/technet/security/bulletin/MS06-003.mspx; classtype:attempted-admin; sid:100000219; rev:1;)
+alert tcp $EXTERNAL_NET any -> $SMTP_SERVERS 25 (msg:"COMMUNITY SMTP Mozilla filename overflow attempt"; flow:to_server,established; content:"filename|3D 22|"; nocase; pcre:"/^\s*filename\=\"[^\n]{100,}\.(exe|lnk)/smi"; reference:bugtraq,16271; classtype:attempted-admin; sid:100000224; rev:1;)
+alert tcp $EXTERNAL_NET any -> $SMTP_SERVERS 25 (msg:"COMMUNITY SMTP Incoming WAB attachment"; flow:to_server, established; content:"Content-Disposition|3A|"; nocase; pcre:"/filename=\s*.*\x2ewab/smi"; reference:cve,2006-0014; reference:url,www.microsoft.com/technet/security/bulletin/MS06-016.mspx; classtype:suspicious-filename-detect; sid:100000279; rev:2;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 25 (msg:"COMMUNITY SMTP McAfee WebShield SMTP bounce message format string attempt"; flow:to_server,established; content:"RCPT"; nocase; pcre:"/^RCPT\s+TO\x3a\s+[^\r\n]*\x25/smi"; reference:bugtraq,16742; reference:cve,2006-0559; classtype:attempted-admin; sid:100000301; rev:1;)
+# Enable only if SMTP_SERVERS is not any
+# alert tcp !$SMTP_SERVERS any -> any 25 (msg:"COMMUNITY SMTP Mytob MAIL FROM Attempt"; flow:established,to_server; content:"MAIL FROM|3A|"; nocase; pcre:"/MAIL\s+FROM\s*\x3A\s*\x3C?(spm|fcnz|www|secur|abuse)@/i"; reference:url,www.symantec.com/avcenter/venc/data/w32.mytob@mm.html; classtype:misc-attack; sid:100000689; rev:1;)

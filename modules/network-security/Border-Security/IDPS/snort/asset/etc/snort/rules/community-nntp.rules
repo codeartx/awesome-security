@@ -1,0 +1,6 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-nntp.rules,v 1.3 2006/02/16 15:51:19 akirk Exp $
+
+alert tcp $EXTERNAL_NET 119 -> $HOME_NET any (msg:"COMMUNITY NNTP Lynx overflow attempt"; flow:to_server,established; content:"Subject"; nocase; pcre:"/^Subject\x3a[^\r\n]{100,}/smi"; reference:cve,2005-3120; reference:bugtraq,15117; reference:url,www.osvdb.org/displayvuln.php?osvdb_id=20019; reference:nessus,20035; classtype:attempted-admin; sid:100000172; rev:2;)

@@ -1,0 +1,15 @@
+version: "3"
+
+# 限 Ubuntu 系统
+services:
+  autopsy:
+    image: bannsec/autopsy:latest
+    container_name: autopsy
+    shm_size: "2gb"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY
+      - JAVA_TOOL_OPTIONS=-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel
+    devices:
+      - "/dev/dri:/dev/dri"

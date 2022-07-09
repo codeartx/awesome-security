@@ -1,0 +1,16 @@
+---
+version: "2"
+
+services:
+  evilginx2:
+    image: warhorse/evilginx2
+    container_name: evilginx2
+    volumes:
+      - ./volumes/config:/config
+      - ./asset/phishlets:/phishlets
+    environment:
+      - TZ=Europe/London
+    ports:
+      - 8443:443
+      - 8080:80
+    entrypoint: sleep 10000

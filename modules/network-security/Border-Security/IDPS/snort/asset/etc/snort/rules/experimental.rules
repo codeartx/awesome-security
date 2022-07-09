@@ -1,0 +1,27 @@
+# Copyright 2001-2005 Sourcefire, Inc. All Rights Reserved
+#
+# This file may contain proprietary rules that were created, tested and
+# certified by Sourcefire, Inc. (the "VRT Certified Rules") as well as
+# rules that were created by Sourcefire and other third parties and
+# distributed under the GNU General Public License (the "GPL Rules").  The
+# VRT Certified Rules contained in this file are the property of
+# Sourcefire, Inc. Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# The GPL Rules created by Sourcefire, Inc. are the property of
+# Sourcefire, Inc. Copyright 2002-2005 Sourcefire, Inc. All Rights
+# Reserved.  All other GPL Rules are owned and copyrighted by their
+# respective owners (please see www.snort.org/contributors for a list of
+# owners and their respective copyrights).  In order to determine what
+# rules are VRT Certified Rules or GPL Rules, please refer to the VRT
+# Certified Rules License Agreement.
+#
+#
+# $Id: experimental.rules,v 1.78.2.1.2.1 2005/05/16 22:17:51 mwatchinski Exp $
+# ---------------
+# EXPERIMENTAL RULES
+# ---------------
+# These signatures are experimental, new and may trigger way too often.
+#
+# Be forwarned, this is our testing ground.  We put new signatures here for
+# testing before incorporating them into the default signature set.  This is
+# for bleeding edge stuff only.
+#

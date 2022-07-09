@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  certbot:
+    container_name: certbot
+    image: certbot/certbot
+    volumes:
+      - ./asset/certbot/www:/usr/share/certbot/www #http验证目录
+      - ./asset/certbot/ssl:/etc/letsencrypt #证书位置
+
+  nginx:
+    container_name: nginx
+    image: nginx
+    environment:
+      TZ : 'Asia/Shanghai'
+    volumes:
+      - ./asset/nginx/conf:/etc/nginx # 配置文件
+      - ./asset/nginx/web:/usr/share/nginx # 网站
+      - ./asset/nginx/log:/var/log/nginx
+      - ./asset/certbot/www:/usr/share/certbot/www
+      - ./asset/certbot/ssl:/usr/share/certbot/ssl
+    ports:
+      - "80:80"
+      - "443:443"
+    command:  nginx -g 'daemon off;'
+
+  nginx-https:
+    container_name: nginx
+    image: nginx
+    environment:
+      TZ: 'Asia/Shanghai'
+    volumes:
+      - ./asset/nginx/conf-https:/etc/nginx # 配置文件
+      - ./asset/nginx/web:/usr/share/nginx # 网站
+      - ./asset/nginx/log:/var/log/nginx
+      - ./asset/certbot/www:/usr/share/certbot/www
+      - ./asset/certbot/ssl:/usr/share/certbot/ssl
+    ports:
+      - "80:80"
+      - "443:443"
+    command: nginx -g 'daemon off;'

@@ -1,0 +1,10 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-web-iis.rules,v 1.2 2005/10/20 13:49:44 akirk Exp $
+
+#Rules submitted by rmkml
+alert tcp $EXTERNAL_NET any -> $HOME_NET $HTTP_PORTS (msg:"COMMUNITY WEB-IIS Remote IIS Server Name spoof attempt localhost"; flow:to_server,established; content:"localhost"; nocase; pcre:"/http\x3A\/\/localhost\/.*\.asp/i"; reference:cve,2005-2678; classtype:web-application-activity; sid:100000138; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET $HTTP_PORTS (msg:"COMMUNITY WEB-IIS Remote IIS Server Name spoof attempt loopback IP"; flow:to_server,established; content:"127.0.0.1"; pcre:"/http\x3A\/\/127\.0\.0\.1\/.*\.asp/i"; reference:cve,2005-2678; classtype:web-application-activity; sid:100000139; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET $HTTP_PORTS (msg:"COMMUNITY WEB-IIS RSA WebAgent Redirect Overflow attempt"; flow:to_server,established; uricontent:"/WebID/IISWebAgentIF.dll"; nocase; pcre:"/\x3fRedirect\x3f[^\s]{100,}/smi"; classtype:web-application-activity; sid:100000173; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET $HTTP_PORTS (msg:"COMMUNITY WEB-IIS RSA WebAgent access"; flow:to_server,established; uricontent:"/WebID/IISWebAgentIF.dll"; nocase; reference:cve,2005-1118; reference:bugtraq,13168; classtype:web-application-activity; sid:100000174; rev:1;)

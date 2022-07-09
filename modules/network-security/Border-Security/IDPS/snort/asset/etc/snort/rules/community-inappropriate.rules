@@ -1,0 +1,8 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-inappropriate.rules,v 1.8 2005/04/01 17:16:23 akirk Exp $
+
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY INAPPROPRIATE lolita sex"; content:"lolita"; nocase; content:"sex"; nocase; flow:to_client,established; classtype:kickass-porn; sid:100000105; rev:1;)
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY INAPPROPRIATE preteen sex"; content:"teen"; nocase; pcre:"/pre-?teen/i"; flow:to_client,established; classtype:kickass-porn; sid:100000123; rev:1;)
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY INAPPROPRIATE girls gone wild"; content:"girls"; nocase; content:"gone"; nocase; content:"wild"; nocase; flow:to_client,established; classtype:kickass-porn; sid:100000124; rev:1;)

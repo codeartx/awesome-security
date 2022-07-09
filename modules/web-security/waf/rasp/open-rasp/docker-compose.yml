@@ -1,0 +1,84 @@
+version: '3.4'
+
+services:
+    # 基础db，初始化 openrasp、dvwa、mutillidae、cloud、iast 所需数据
+    mysql5.6:
+        build:
+            context: ./images/mysql5.6
+        image: huafeihuao0/openrasp-mysql:5.6
+        hostname: mysql5.6
+        tty: true
+
+    ###
+    # 先启动管理后台 rasp-cloud 及其所需的 es、mongodb
+    ###
+    elasticsearch6.4.2:
+        build:
+            context: ./images/elasticsearch6.4.2
+        image: huafeihuao0/openrasp-elasticsearch:6.4.2
+        ulimits:
+            nofile:
+                soft: 131071
+                hard: 131071
+        hostname: elasticsearch6.4.2
+        tty: true
+
+    mongodb3.6:
+        build:
+            context: ./images/mongodb3.6
+        image: huafeihuao0/openrasp-mongodb:3.6
+        hostname: mongodb3.6
+        tty: true
+
+    rasp-cloud:
+        build:
+            context: ./images/rasp-cloud
+        image: huafeihuao0/rasp-cloud:1.3.0
+        depends_on:
+            - elasticsearch6.4.2
+            - mongodb3.6
+        hostname: rasp-cloud
+        ports:
+            - "18660:8086"
+        tty: true
+
+    #########
+    # 植入 openrasp 的 dvwa（php）以及webgoat（java）
+    #########
+    openrasp-dvwa:
+        build:
+            context: ./images/openrasp-dvwa
+        image: huafeihuao0/openrasp-dvwa:1.9
+        hostname: openrasp-dvwa
+        depends_on:
+            - rasp-cloud
+        ports:
+            - "18662:18662"
+        tty: true
+
+    openrasp-webgoat:
+        build:
+            context: ./images/openrasp-webgoat
+        image: huafeihuao0/openrasp-webgoat:8.0
+        hostname: openrasp-webgoat
+        ports:
+            - "8444:8444"
+        depends_on:
+            - rasp-cloud
+
+    #########
+    # 依赖于 openrasp 的灰盒扫描
+    #########
+    openrasp-iast:
+        build:
+            context: ./images/openrasp-iast
+        image: huafeihuao0/openrasp-iast:1.3.0
+        depends_on:
+            - mysql5.6
+            - rasp-cloud
+            - openrasp-dvwa
+            - openrasp-webgoat
+        hostname: openrasp-iast
+        ports:
+            - "18661:18664"
+        tty: true

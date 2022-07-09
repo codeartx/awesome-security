@@ -1,0 +1,48 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-misc.rules,v 1.25 2007/03/05 15:22:49 akirk Exp $
+
+alert udp $EXTERNAL_NET any -> $HOME_NET 5093 (msg:"COMMUNITY MISC Sentinel License Manager overflow attempt"; dsize:>1000; reference:cve,CAN-2005-0353; reference:bugtraq,12742; classtype:attempted-user; sid:100000125; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 2380 (msg:"COMMUNITY MISC GoodTech Telnet Server Buffer Overflow Attempt"; flow:to_server,established; pcre:"/[^\r\n]{1000,}/i"; reference:cve,2005-0768; reference:url,unsecure.altervista.org/security/goodtechtelnet.htm; classtype:attempted-dos; sid:100000126; rev:1;)
+#Rule submitted by rmkml
+alert tcp any any -> any !139 (msg:"COMMUNITY MISC BAD-SSL tcp detect"; flow:stateless; content:"|00 0E|"; depth:4; offset:0; classtype:misc-activity; sid:100000137; rev:1;)
+#Rules submitted by Thierry Chich
+alert tcp any any -> any any (msg:"COMMUNITY MISC streaming RTSP - realplayer"; flow:established; content:"PLAY rtsp|3A 2F 2F|"; depth: 12; classtype:policy-violation; reference:url,www.rtsp.org; sid:100000189; rev:2;)
+alert tcp any any -> any any (msg:"COMMUNITY MISC streaming Windows Mediaplayer"; flow:established; content:"|01 00 00 00 ce fa 0b b0|"; depth: 8; content:"MMS"; distance:4; within:4; classtype:policy-violation; reference:url,www.microsoft.com; sid:100000190; rev:2;)
+#alert udp $EXTERNAL_NET 1023: -> $HOME_NET 123 (msg:"COMMUNITY MISC Ntp fingerprint detect"; dsize:48; content:"|BE 78 2F 1D 19 BA 00 00|"; reference:url,www.arhont.com/ViewPage7422.html?siteNodeId=3&languageId=1&contentId=-1; classtype:attempted-dos; sid:100000198; rev:1;)
+#Rule submitted by rmkml
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS 8008 (msg:"COMMUNITY MISC Novell eDirectory iMonitor access"; flow:to_server,established; uricontent:"/nds/"; nocase; reference:bugtraq,14548; reference:cve,2005-2551; reference:nessus,19248; reference:url,www.osvdb.org/displayvuln.php?osvdb_id=18703; classtype:web-application-attack; sid:100000199; rev:1;)
+#Rule submitted jointly by Romain Chartier, Sylvain Sarmejeanne, and Pierre Lalet
+alert udp any any -> any 53 (msg:"COMMUNITY MISC Tunneling IP over DNS with NSTX"; byte_test: 1,>,32,12; content: "|00 10 00 01|"; offset: 12; rawbytes; threshold: type threshold, track by_src, count 50, seconds 60; reference:url,nstx.dereference.de/nstx/; reference:url,slashdot.org/articles/00/09/10/2230242.shtml; classtype:policy-violation; sid:100000208; rev:1;)
+#Rules submitted by Crusoe Researches Team
+alert udp $EXTERNAL_NET any -> $HOME_NET 69 (msg:"COMMUNITY MISC TFTP32 Get Format string attempt"; content:"|00 01 25 2E|"; depth:4; reference:url,www.securityfocus.com/archive/1/422405/30/0/threaded; reference:url,www.critical.lt/?vulnerabilities/200; classtype:attempted-admin; sid:100000222; rev:1;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 162 (msg:"COMMUNITY MISC SNMP trap Format String detected"; content:"%s"; reference:bugtraq,16267; reference:cve,2006-0250; reference:url,www.osvdb.org/displayvuln.php?osvdb_id=22493; classtype:attempted-recon; sid:100000227; rev:1;)
+#Rule submitted by Nigel Houghton
+alert tcp $EXTERNAL_NET any -> $HOME_NET 389 (msg:"COMMUNITY MISC Lotus Domino LDAP attack"; flow:established; content:"|30 0c 02 01 01 60 07 02 00 03 04 00 80 00|"; reference:bugtraq,16523; reference:cve,2006-0580; reference:url,lists.immunitysec.com/pipermail/dailydave/2006-February/002896.html; classtype:misc-attack; sid:100000229; rev:2;)
+
+#Jabber/Google Talk traffic from the client submitted by Steven Alexander
+alert tcp $HOME_NET any -> $EXTERNAL_NET 5222 (msg:"COMMUNITY MISC Jabber/Google Talk Outgoing Traffic"; flow:to_server,established; content:"<stream"; offset:0; nocase; reference:url,www.google.com/talk/; classtype:policy-violation; sid:100000230; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 5222 (msg:"COMMUNITY MISC Jabber/Google Talk Outgoing Auth"; flow:to_server,established; content:"<auth"; offset:0; nocase; reference:url,www.google.com/talk/; classtype:policy-violation; sid:100000231; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 5222 (msg:"COMMUNITY MISC Google Talk Logon"; flow:to_server,established; content:"<stream\:stream to=\"gmail.com\""; offset:0; nocase; reference:url,www.google.com/talk/; classtype:policy-violation; sid:100000232; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 5222 (msg:"COMMUNITY MISC Jabber/Google Talk Outoing Message"; flow:to_server,established; content:"<message"; offset:0; nocase; reference:url,www.google.com/talk/;  classtype:policy-violation; sid:100000233; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 5222 (msg:"COMMUNITY MISC Jabber/Google Talk Log Out"; flow:to_server,established; content:"</stream"; offset:0; nocase; reference:url,www.google.com/talk/; classtype:policy-violation; sid:100000234; rev:1;)
+
+#Jabber/Google Talk traffic from the server submitted by Steven Alexander
+alert tcp $EXTERNAL_NET 5222 -> $HOME_NET any (msg:"COMMUNITY MISC Jabber/Google Talk Logon Success"; flow:to_client,established; content:"<success"; offset:0; nocase; reference:url,www.google.com/talk/; classtype:policy-violation; sid:100000235; rev:1;)
+alert tcp $EXTERNAL_NET 5222 -> $HOME_NET any (msg:"COMMUNITY MISC Jabber/Google Talk Incoming Message"; flow:to_client,established; content:"<message"; offset:0; nocase; reference:url,www.google.com/talk/; classtype:policy-violation; sid:100000236; rev:1;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 1364 (msg:"COMMUNITY MISC Connect Direct Server - Session Terminated Invalid Credentials"; flow:stateless; content:"SVTM056I"; nocase; classtype:bad-unknown; sid:100000281; rev:2;)
+
+# TOR Rules by Dan Ramaswami
+alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"COMMUNITY MISC DLR-TOR Directory server response"; flow:established,to_client; content:"|54 4f 52|"; offset:109; depth:3; content:"|06 03 55 04 03|"; distance:4; within:5; content:"|20 3C 69 64 65 6E 74 69 74 79 3E|"; distance:2; within:30; reference:url,tor.eff.org; classtype:policy-violation; sid:100000874; rev:2;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY MISC DLR-TOR Client Traffic"; flow:established,to_server;content:"|54 4f 52|"; content:"|06 03 55 04 03 14|"; distance:4; within:6; content:"|63 6c 69 65 6e 74 20 3C 69 64 65 6E 74 69 74 79 3E|"; distance:1; within:17; classtype:policy-violation; reference:url,tor.eff.org; sid:100000875; rev:1;)
+
+# Additional GoogleTalk Rules by Will Young
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"COMMUNITY MISC Google Talk Version Check"; flow: established,to_server; uricontent:"/googletalk/google-talk-versioncheck.txt?"; nocase; classtype: policy-violation; sid:100000876; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 5222 (msg:"COMMUNITY MISC Google Talk Startup"; flow: established,to_server; content:"google.com"; nocase; content:"jabber|3A|client"; nocase; classtype:policy-violation; threshold: type limit, track by_src, count 1, seconds 300; sid:100000877; rev:1;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 1720 (msg:"COMMUNITY MISC Q.931 Invalid Call Reference Length Buffer Overflow"; flow:established; content:"|08|"; depth:1; byte_test:1,>,4,1; classtype:attempted-dos; reference:url,www.ethereal.com/news/item_20050504_01.html; reference:url,www.elook.org/internet/126.html; sid:100000892; rev:1;)
+
+# Rule submitted by dprotich@sagonet.com
+alert udp $EXTERNAL_NET any <> $HOME_NET 1025:1026 (msg:"COMMUNITY MISC Microsoft Messenger phishing attempt - corrupted registry"; content:"FAILURE TO ACT NOW MAY LEAD TO DATA LOSS AND CORRUPTION!"; classtype:misc-activity; reference:url,www.microsoft.com/windowsxp/using/security/learnmore/stopspam.mspx; sid:100000927; rev:1;)

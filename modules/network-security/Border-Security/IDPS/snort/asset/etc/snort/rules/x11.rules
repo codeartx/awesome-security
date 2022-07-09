@@ -1,0 +1,24 @@
+# Copyright 2001-2005 Sourcefire, Inc. All Rights Reserved
+#
+# This file may contain proprietary rules that were created, tested and
+# certified by Sourcefire, Inc. (the "VRT Certified Rules") as well as
+# rules that were created by Sourcefire and other third parties and
+# distributed under the GNU General Public License (the "GPL Rules").  The
+# VRT Certified Rules contained in this file are the property of
+# Sourcefire, Inc. Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# The GPL Rules created by Sourcefire, Inc. are the property of
+# Sourcefire, Inc. Copyright 2002-2005 Sourcefire, Inc. All Rights
+# Reserved.  All other GPL Rules are owned and copyrighted by their
+# respective owners (please see www.snort.org/contributors for a list of
+# owners and their respective copyrights).  In order to determine what
+# rules are VRT Certified Rules or GPL Rules, please refer to the VRT
+# Certified Rules License Agreement.
+#
+#
+# $Id: x11.rules,v 1.19.2.1.2.1 2005/05/16 22:17:52 mwatchinski Exp $
+#----------
+# X11 RULES
+#----------
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 6000 (msg:"X11 MIT Magic Cookie detected"; flow:established; content:"MIT-MAGIC-COOKIE-1"; reference:arachnids,396; classtype:attempted-user; sid:1225; rev:4;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 6000 (msg:"X11 xopen"; flow:established; content:"l|00 0B 00 00 00 00 00 00 00 00 00|"; reference:arachnids,395; classtype:unknown; sid:1226; rev:4;)

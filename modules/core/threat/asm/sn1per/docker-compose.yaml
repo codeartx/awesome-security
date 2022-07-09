@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  xer0dayz:
+    image: xer0dayz/sn1per
+    ports:
+      - 1337:1337

@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  godlp:
+    image: huafeihuao0/godlp:1.2.15
+    entrypoint: make run

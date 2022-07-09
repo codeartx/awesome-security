@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mhn:
+    image: huafeihuao0/mhn:be58cbf
+    ports:
+      - 8080:80 # 服务端： root@localhost/password
+      - 10000:10000
+      - 3000:3000 # honeymap
+      - 8089:8089

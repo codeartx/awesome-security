@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  # users:
+  #  blue:
+  #    blue: 3mdvu-lN0QMTzMO4ty9SgsXkpuWjRczG5GkvAW0wHzM
+  #  red:
+  #    red: 1NfZW6XNfRTX5dOYFsoUstR9aTUiz4BzUdJzCDrAsWA
+  caldera:
+    image: mitre/caldera
+    ports:
+      - 8888:8888
+    entrypoint: python3 server.py

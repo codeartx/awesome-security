@@ -1,0 +1,60 @@
+{
+  "urls": {
+    "https://baidu.com/": {
+      "status": 302
+    },
+    "https://www.baidu.com/": {
+      "status": 200
+    }
+  },
+  "technologies": [
+    {
+      "slug": "jquery",
+      "name": "jQuery",
+      "confidence": 100,
+      "version": "1.10.2",
+      "icon": "jQuery.svg",
+      "website": "https://jquery.com",
+      "cpe": "cpe:/a:jquery:jquery",
+      "categories": [
+        {
+          "id": 59,
+          "slug": "javascript-libraries",
+          "name": "JavaScript libraries"
+        }
+      ]
+    },
+    {
+      "slug": "core-js",
+      "name": "core-js",
+      "confidence": 100,
+      "version": "3.8.3",
+      "icon": "core-js.png",
+      "website": "https://github.com/zloirock/core-js",
+      "cpe": null,
+      "categories": [
+        {
+          "id": 59,
+          "slug": "javascript-libraries",
+          "name": "JavaScript libraries"
+        }
+      ]
+    },
+    {
+      "slug": "swfobject",
+      "name": "SWFObject",
+      "confidence": 100,
+      "version": null,
+      "icon": "SWFObject.png",
+      "website": "https://github.com/swfobject/swfobject",
+      "cpe": null,
+      "categories": [
+        {
+          "id": 19,
+          "slug": "miscellaneous",
+          "name": "Miscellaneous"
+        }
+      ]
+    }
+  ]
+}

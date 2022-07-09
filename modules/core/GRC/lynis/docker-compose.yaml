@@ -1,0 +1,5 @@
+version: '3'
+
+services:
+  lynis:
+    image: huafeihuao0/lynis:3.0.7

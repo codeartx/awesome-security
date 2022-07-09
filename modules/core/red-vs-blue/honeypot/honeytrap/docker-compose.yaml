@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  honeytrap:
+    image: honeytrap/honeytrap
+    ports:
+      - 8022:8022
+      - 5900:5900

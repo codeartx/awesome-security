@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  vault:
+    image: vault:1.11.0
+    container_name: vault
+    volumes:
+      #      - ./config/config.hcl:/vault/config/config.hcl
+      #      - ./config/certs:/certs
+      - ./volumes/logs:/vault/logs
+      - ./volumes/file:/vault/file # 当使用 file data storage 插件时，数据被存储在这里。默认不往这写任何数据。
+    cap_add:
+      - IPC_LOCK # 锁定内存以防止敏感值信息被交换(swapped)到磁盘中
+    ports:
+      - "8443:8200"

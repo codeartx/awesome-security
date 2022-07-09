@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  hfish-server:
+    image: threatbook/hfish-server:2.8.1
+    volumes:
+      - ./volumes:/usr/share/hfish
+    privileged: true
+    ports:
+      - 4433:4433 # web端口
+      - 4434:4434 # api 端口

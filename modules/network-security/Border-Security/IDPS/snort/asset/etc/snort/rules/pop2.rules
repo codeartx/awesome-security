@@ -1,0 +1,26 @@
+# Copyright 2001-2005 Sourcefire, Inc. All Rights Reserved
+#
+# This file may contain proprietary rules that were created, tested and
+# certified by Sourcefire, Inc. (the "VRT Certified Rules") as well as
+# rules that were created by Sourcefire and other third parties and
+# distributed under the GNU General Public License (the "GPL Rules").  The
+# VRT Certified Rules contained in this file are the property of
+# Sourcefire, Inc. Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# The GPL Rules created by Sourcefire, Inc. are the property of
+# Sourcefire, Inc. Copyright 2002-2005 Sourcefire, Inc. All Rights
+# Reserved.  All other GPL Rules are owned and copyrighted by their
+# respective owners (please see www.snort.org/contributors for a list of
+# owners and their respective copyrights).  In order to determine what
+# rules are VRT Certified Rules or GPL Rules, please refer to the VRT
+# Certified Rules License Agreement.
+#
+#
+# $Id: pop2.rules,v 1.11.2.2.2.1 2005/05/16 22:17:52 mwatchinski Exp $
+#--------------
+# POP2 RULES
+#--------------
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 109 (msg:"POP2 FOLD overflow attempt"; flow:established,to_server; content:"FOLD"; nocase; isdataat:256,relative; pcre:"/^FOLD\s[^\n]{256}/smi"; reference:bugtraq,283; reference:cve,1999-0920; reference:nessus,10130; classtype:attempted-admin; sid:1934; rev:10;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 109 (msg:"POP2 FOLD arbitrary file attempt"; flow:established,to_server; content:"FOLD"; nocase; pcre:"/^FOLD\s+\//smi"; classtype:misc-attack; sid:1935; rev:5;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 109 (msg:"POP2 x86 Linux overflow"; flow:established,to_server; content:"|EB|,[|89 D9 80 C1 06|9|D9 7C 07 80 01|"; reference:bugtraq,283; reference:cve,1999-0920; reference:nessus,10130; classtype:attempted-admin; sid:284; rev:8;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 109 (msg:"POP2 x86 Linux overflow"; flow:established,to_server; content:"|FF FF FF|/BIN/SH|00|"; reference:bugtraq,283; reference:cve,1999-0920; reference:nessus,10130; classtype:attempted-admin; sid:285; rev:8;)

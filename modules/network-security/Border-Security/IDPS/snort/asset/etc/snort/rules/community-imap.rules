@@ -1,0 +1,15 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-imap.rules,v 1.7 2006/04/07 13:34:06 akirk Exp $
+
+alert tcp $EXTERNAL_NET any  -> $HOME_NET 143 (msg:"COMMUNITY IMAP GNU Mailutils request tag format string vulnerability"; flow:to_server,established; content:"|25|"; pcre:"/^\S*\x25\S*\s/sm"; reference:cve,CAN-2005-1523; reference:bugtraq,13764; classtype:attempted-admin; sid:100000135; rev:1;)
+#Rule submitted by rmkml
+alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"COMMUNITY IMAP GNU imapd search format string attempt"; flow:established,to_server; pcre:"/\sSEARCH.*\%/smi"; reference:url,www.osvdb.org/displayvuln.php?osvdb_id=19306; reference:cve,2005-2878; classtype:misc-attack; sid:100000136; rev:1;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"COMMUNITY IMAP MDaemon authentication protocol decode"; flow:to_server,established; content:"AUTHENTICATE"; nocase; pcre:"/\sAUTHENTICATE\s[CRAM-MD5|LOGIN]/smi"; flowbits:set,community_imap.auth; flowbits:noalert; classtype:protocol-command-decode; sid:100000152; rev:2;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"COMMUNITY IMAP MDaemon authentication multiple packet overflow attempt"; flow:to_server,established; flowbits:isset,community_imap.auth; isdataat:342; pcre:"/[^\x0A]{342,}/"; reference:bugtraq,14317; classtype:attempted-admin; sid:100000153; rev:3;)
+alert tcp $HOME_NET 143 -> $EXTERNAL_NET any (msg:"COMMUNITY IMAP MDaemon authentication okay protocol decode"; flow:to_client,established; content:"AUTHENTICATE"; nocase; pcre:"/\sOK\sAUTHENTICATE/smi"; flowbits:unset,community_imap.auth; flowbits:noalert; classtype:protocol-command-decode; sid:100000154; rev:2;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"COMMUNITY IMAP MDaemon authentication overflow single packet attempt"; flow:to_server,established; content:"AUTHENTICATE"; nocase; pcre:"/\sAUTHENTICATE\s[CRAM-MD5|LOGIN][^\n]*\n[^\n]{342}/smi"; reference:bugtraq,14317; classtype:attempted-admin; sid:100000155; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"COMMUNITY IMAP Qualcomm WorldMail SELECT dot dot attempt"; flow:established,to_server; content:"SELECT"; content:"|2E 2E|"; nocase; pcre:"/^\d*\s*SELECT\s*\.\./smi"; reference:cve,2005-3189; reference:bugtraq,15488; classtype:misc-attack; sid:100000196; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"COMMUNITY IMAP GNU Mailutils imap4d hex attempt"; flow:established,to_server; content:"SEARCH TOPIC %"; reference:cve,2005-2878; reference:bugtraq,14794; reference:nessus,19605; reference:url,www.osvdb.org/displayvuln.php?osvdb_id=19306; classtype:misc-attack; sid:100000207; rev:2;)

@@ -1,0 +1,9 @@
+[nginxno404]
+enabled = true
+port = http,https
+filter = nginx-not-found
+action = iptables[name=nginxno404, port=http, protocol=tcp]
+# 要监控的站点日志文件
+logpath  = /home/wwwlogs/access.log
+bantime = 3600 #默认是屏蔽 IP 地址 10 分钟
+maxretry = 3

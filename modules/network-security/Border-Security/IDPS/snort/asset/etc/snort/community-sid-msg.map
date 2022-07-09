@@ -1,0 +1,837 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# This file is licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# Id SID -> MSG map
+
+100000100 || COMMUNITY EXPLOIT Windows Acrobat Reader Activex Overflow Flowbit || cve,2004-0629 || bugtraq,10947
+100000101 || COMMUNITY EXPLOIT Windows Acrobat Reader Activex Overflow Exploit || cve,2004-0629 || bugtraq,10947
+100000102 || COMMUNITY GAME Halocon Denial of Service Empty UDP Packet || bugtraq,12281
+100000103 || COMMUNITY GAME Breed Game Server Denial of Service Empty UDP Packet || bugtraq,12262
+100000104 || COMMUNITY GAME Amp II 3D Game Server Denial of Service Empty UDP Packet || bugtraq,12192
+100000105 || COMMUNITY INAPPROPRIATE lolita sex
+100000106 || COMMUNITY SQL-INJECTION Microsoft BizTalk Server 2002 rawdocdata.asp || bugtraq,7470 || cve,2003-0118 || url,www.microsoft.com/technet/security/bulletin/MS03-016.mspx
+100000107 || COMMUNITY SQL-INJECTION Microsoft BizTalk Server 2002 RawCustomSearchField.asp || bugtraq,7470 || cve,2003-0118 || url,www.microsoft.com/technet/security/bulletin/MS03-016.mspx
+100000108 || COMMUNITY SQL-INJECTION OpenBB board.php || bugtraq,7404
+100000109 || COMMUNITY SQL-INJECTION OpenBB member.php || bugtraq,7404
+100000110 || COMMUNITY VIRUS Dabber PORT overflow attempt port 5554 || MCAFEE,125300
+100000111 || COMMUNITY VIRUS Dabber PORT overflow attempt port 1023 || MCAFEE,125300
+100000112 || COMMUNITY WEB-CGI Readfile.tcl Access || bugtraq,7426
+100000113 || COMMUNITY WEB-CGI HappyMall Command Execution member_html.cgi || bugtraq,7530 || cve,2003-0243
+100000114 || COMMUNITY WEB-CGI HappyMall Command Execution normal_html.cgi || bugtraq,7530 || cve,2003-0243
+100000115 || COMMUNITY WEB-CGI PHP-Nuke Web_Links Path Disclosure Null CID || bugtraq,7589
+100000116 || COMMUNITY WEB-CGI PHP-Nuke Web_Links Path Disclosure Non-Numeric CID || bugtraq,7589
+100000117 || COMMUNITY WEB-CGI VBulliten Remote Command Execution Attempt || bugtraq,12542
+100000118 || COMMUNITY WEB-CLIENT Internet Explorer URLMON.DLL Content-Type Overflow Attempt || bugtraq,7419 || cve,2003-0113 || url,www.microsoft.com/technet/security/bulletin/MS03-015.mspx
+100000119 || COMMUNITY WEB-CLIENT Internet Explorer URLMON.DLL Content-Encoding Overflow Attempt || bugtraq,7419 || cve,2003-0113 || url,www.microsoft.com/technet/security/bulletin/MS03-015.mspx
+100000121 || COMMUNITY WEB-MISC Test Script Access
+100000122 || COMMUNITY WEB-MISC mod_jrun overflow attempt || bugtraq,11245 || cve,2004-0646
+100000123 || COMMUNITY INAPPROPRIATE preteen sex
+100000124 || COMMUNITY INAPPROPRIATE girls gone wild
+100000125 || COMMUNITY MISC Sentinel License Manager overflow attempt || cve,CAN-2005-0353 || bugtraq,12742
+100000126 || COMMUNITY MISC GoodTech Telnet Server Buffer Overflow Attempt || cve,2005-0768 || url,unsecure.altervista.org/security/goodtechtelnet.htm
+100000127 || COMMUNITY WEB-CGI Stadtaus.com PHP Form Mail Remote Script Include Attack formmail.inc.php || bugtraq,12735
+100000128 || COMMUNITY WEB-CGI Stadtaus.com PHP Form Mail Remote Script Include Attack download_center_lite.inc.php || bugtraq,12735
+100000129 || COMMUNITY WEB-MISC Cisco IOS HTTP Router Management Service Infinite Loop DoS || bugtraq,10014 || url,www.cisco.com/warp/public/707/ioshttpserverquery-pub.shtml
+100000130 || COMMUNITY WEB-MISC PY Software Active Webcam Webserver DoS || bugtraq,12778
+100000131 || COMMUNITY WEB-MISC PY Software Active Webcam Webserver DoS - Floppy Access || bugtraq,12778
+100000132 || COMMUNITY WEB-MISC Proxy Server Access
+100000133 || COMMUNITY WEB-DoS Xeneo Server Question Mark GET Request || bugtraq,7398 || url,www.northernsolutions.com/support/index.php?view=support&cmd=releasenotes&productid=1
+100000134 || COMMUNITY DOS Tcpdump rsvp attack || cve,2005-1280 || cve,2005-1281 || bugtraq,13391
+100000135 || COMMUNITY IMAP GNU Mailutils request tag format string vulnerability || cve,CAN-2005-1523 || bugtraq,13764
+100000136 || COMMUNITY IMAP GNU imapd search format string attempt || url,www.osvdb.org/displayvuln.php?osvdb_id=19306 || cve,2005-2878
+100000137 || COMMUNITY MISC BAD-SSL tcp detect
+100000138 || COMMUNITY WEB-IIS Remote IIS Server Name spoof attempt localhost || cve,2005-2678
+100000139 || COMMUNITY WEB-IIS Remote IIS Server Name spoof attempt loopback IP || cve,2005-2678
+100000140 || COMMUNITY WEB-MISC MaxDB Web Tool Remote Stack Overflow || cve,2005-0684 || url,www.idefense.com/application/poi/display?id=234&type=vulnerabilities
+100000141 || COMMUNITY WEB-MISC Ipswitch Imail web calendaring .jsp directory traversal attempt || bugtraq,13727 || cve,CAN-2005-1252
+100000142 || COMMUNITY WEB-MISC Ipswitch Imail web calendaring .jpg directory traversal attempt || bugtraq,13727 || cve,CAN-2005-1252
+100000143 || COMMUNITY WEB-MISC Ipswitch Imail web calendaring .gif directory traversal attempt || bugtraq,13727 || cve,CAN-2005-1252
+100000144 || COMMUNITY WEB-MISC Ipswitch Imail web calendaring .wav directory traversal attempt || bugtraq,13727 || cve,CAN-2005-1252
+100000145 || COMMUNITY WEB-MISC Ipswitch Imail web calendaring .css directory traversal attempt || bugtraq,13727 || cve,CAN-2005-1252
+100000146 || COMMUNITY WEB-MISC Ipswitch Imail web calendaring .htm directory traversal attempt || bugtraq,13727 || cve,CAN-2005-1252
+100000148 || COMMUNITY WEB-MISC Barracuda img.pl attempt || bugtraq,14712 || bugtraq,14710 || cve,2005-2848
+100000149 || COMMUNITY WEB-MISC Jboss % attempt || bugtraq,13985 || cve,2005-2006 || url,www.osvdb.org/displayvuln.php?osvdb_id=17403
+100000150 || COMMUNITY WEB-MISC HTTP Transfer-Content Request Smuggling attempt || bugtraq,13873 || bugtraq,14106 || cve,2005-2088 || cve,2005-2089 || cve,2005-2090 || cve,2005-2091 || cve,2005-2092 || cve,2005-2093 || cve,2005-2094 || url,www.osvdb.org/displayvuln.php?osvdb_id=17738 || nessus,18337
+100000151 || COMMUNITY WEB-PHP piranha default passwd attempt || bugtraq,1148 || cve,2000-0248 || nessus,10381
+100000152 || COMMUNITY IMAP MDaemon authentication protocol decode
+100000153 || COMMUNITY IMAP MDaemon authentication multiple packet overflow attempt || bugtraq,14317
+100000154 || COMMUNITY IMAP MDaemon authentication okay protocol decode
+100000155 || COMMUNITY IMAP MDaemon authentication overflow single packet attempt || bugtraq,14317
+100000156 || COMMUNITY WEB-CGI Twiki shell command execution || bugtraq,14834 || cve,2005-2877 || url,twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithRev
+100000157 || COMMUNITY WEB-CGI ATutor password_reminder.php SQL injection attempt || bugtraq,14831
+100000158 || COMMUNITY SIP INVITE message flooding
+100000159 || COMMUNITY SIP REGISTER message flooding
+100000160 || COMMUNITY SIP TCP/IP message flooding directed to SIP proxy
+100000161 || COMMUNITY SIP DNS No such name treshold - Abnormaly high count of No such name responses
+100000162 || COMMUNITY SIP 401 Unauthorized Flood
+100000163 || COMMUNITY SIP 407 Proxy Authentication Required Flood
+100000164 || COMMUNITY ICMP Linux DoS sctp Exploit || nessus,19777
+100000165 || COMMUNITY EXPLOIT Sentinel LM exploit || bugtraq,12742 || cve,2005-0353 || url,www.osvdb.org/displayvuln.php?osvdb_id=14605 || nessus,17326
+100000166 || COMMUNITY ORACLE TNS Listener shutdown via iSQLPlus attempt || bugtraq,15032 || url,www.red-database-security.com/advisory/oracle_isqlplus_shutdown.html
+100000167 || COMMUNITY SMTP Hydra Activity Detected || url,www.thc.org/releases.php
+100000168 || COMMUNITY WEB-ATTACKS Hydra Activity Detected || url,www.thc.org/releases.php
+100000169 || COMMUNITY WEB-ATTACKS Amap fingerprint attempt || url,www.thc.org/releases.php
+100000170 || COMMUNITY WEB-ATTACKS GFI MailSecurity Management Host Overflow Attempt Long Host Parameter || bugtraq,15081 || url,www.osvdb.org/displayvuln.php?osvdb_id=19926
+100000171 || COMMUNITY WEB-ATTACKS GFI MailSecurity Management Host Overflow Attempt Long Accept Parameter || bugtraq,15081 || url,www.osvdb.org/displayvuln.php?osvdb_id=19926
+100000172 || COMMUNITY NNTP Lynx overflow attempt || cve,2005-3120 || bugtraq,15117 || url,www.osvdb.org/displayvuln.php?osvdb_id=20019 || nessus,20035
+100000173 || COMMUNITY WEB-IIS RSA WebAgent Redirect Overflow attempt
+100000174 || COMMUNITY WEB-IIS RSA WebAgent access || cve,2005-1118 || bugtraq,13168
+100000175 || COMMUNITY DOS Ethereal slimp overflow attempt || cve,2005-3243 || url,www.ethereal.com/docs/release-notes/ethereal-0.10.13.html
+100000176 || COMMUNITY EXPLOIT HPUX LPD overflow attempt || cve,2005-3277 || bugtraq,15136
+100000177 || COMMUNITY WEB-MISC Linksys apply.cgi overflow attempt || bugtraq,14822 || cve,2005-2799 || nessus,20096 || url,www.osvdb.org/displayvuln.php?osvdb_id=19389
+100000178 || COMMUNITY WEB-MISC Hasbani-WindWeb GET DoS attempt || bugtraq,15225 || nessus,20097
+100000179 || COMMUNITY WEB-MISC SMC TRACE access || url,www.kb.cert.org/vuls/id/867593
+100000180 || COMMUNITY EXPLOIT SIP UDP spoof attempt || bugtraq,14174 || cve,2005-2182 || url,www.osvdb.org/displayvuln.php?osvdb_id=17838
+100000181 || COMMUNITY GAME FlatFrag game dos exploit || bugtraq,15287 || cve,2005-3492
+100000182 || COMMUNITY GAME Battle Carry attempt || cve,2005-3493 || bugtraq,15282
+100000183 || COMMUNITY WEB-ATTACKS SAP WAS syscmd access || url,www.cybsec.com/vuln/CYBSEC_Security_Advisory_Multiple_XSS_in_SAP_WAS.pdf
+100000184 || COMMUNITY WEB-MISC JBoss JMXInvokerServlet access || url,online.securityfocus.com/archive/1/415707
+100000185 || COMMUNITY WEB-MISC apache directory list attempt || bugtraq,3009 || cve,2001-0731
+100000186 || COMMUNITY WEB-PHP phpinfo access || bugtraq,5789 || cve,2002-1149 || url,www.osvdb.org/displayvuln.php?osvdb_id=3356
+100000187 || COMMUNITY WEB-PHP XSS attempt
+100000188 || COMMUNITY WEB-PHP Vubb Path attempt || cve,2005-3513 || url,marc.theaimsgroup.com/?l=bugtraq&m=113087965608496&w=2
+100000189 || COMMUNITY MISC streaming RTSP - realplayer || url,www.rtsp.org
+100000190 || COMMUNITY MISC streaming Windows Mediaplayer || url,www.microsoft.com
+100000191 || COMMUNITY SMTP Gnu Mailman utf8 attachement access || bugtraq,15408 || cve,2005-3573 || url,www.osvdb.org/displayvuln.php?osvdb_id=20819
+100000192 || COMMUNITY SQL-INJECTION WIZZ ForumTopicDetails Sql Injection attempt || bugtraq,15410 || url,www.osvdb.org/displayvuln.php?osvdb_id=20846
+100000193 || COMMUNITY SQL-INJECTION WIZZ ForumAuthDetails Sql Injection attempt || bugtraq,15410 || url,www.osvdb.org/displayvuln.php?osvdb_id=20845
+100000194 || COMMUNITY SQL-INJECTION WIZZ ForumReply Sql Injection attempt || bugtraq,15410 || url,www.osvdb.org/displayvuln.php?osvdb_id=20847
+100000195 || COMMUNITY WEB-PHP _SERVER HTTP_ACCEPT_LANGUAGE access || bugtraq,15414 || cve,2005-3347
+100000196 || COMMUNITY IMAP Qualcomm WorldMail SELECT dot dot attempt || cve,2005-3189 || bugtraq,15488
+100000197 || COMMUNITY ICMP undefined code
+100000198 || COMMUNITY MISC Ntp fingerprint detect || url,www.arhont.com/ViewPage7422.html?siteNodeId=3&languageId=1&contentId=-1
+100000199 || COMMUNITY MISC Novell eDirectory iMonitor access || bugtraq,14548 || cve,2005-2551 || nessus,19248 || url,www.osvdb.org/displayvuln.php?osvdb_id=18703
+100000200 || COMMUNITY WEB-MISC Symantec Brightmail Antispam default login attempt || nessus,19598 || url,securityresponse.symantec.com/avcenter/security/Content/2005.05.31a.html
+100000201 || COMMUNITY WEB-PHP CuteNews flood.db.php access || bugtraq,14869 || cve,2005-3010 || nessus,19756 || url,www.osvdb.org/displayvuln.php?osvdb_id=19478
+100000202 || COMMUNITY WEB-PHP DeluxeBB topic.php access || bugtraq,14851 || cve,2005-2989 || nessus,19750 || url,www.osvdb.org/displayvuln.php?osvdb_id=19404
+100000203 || COMMUNITY WEB-PHP DeluxeBB misc.php access || bugtraq,14851 || cve,2005-2989 || nessus,19750 || url,www.osvdb.org/displayvuln.php?osvdb_id=19405
+100000204 || COMMUNITY WEB-PHP DeluxeBB pm.php access || bugtraq,14851 || cve,2005-2989 || nessus,19750 || url,www.osvdb.org/displayvuln.php?osvdb_id=19407
+100000205 || COMMUNITY WEB-PHP DeluxeBB forums.php access || bugtraq,14851 || cve,2005-2989 || nessus,19750 || url,www.osvdb.org/displayvuln.php?osvdb_id=19406
+100000206 || COMMUNITY WEB-PHP DeluxeBB newpost.php access || bugtraq,14851 || cve,2005-2989 || nessus,19750 || url,www.osvdb.org/displayvuln.php?osvdb_id=19408
+100000207 || COMMUNITY IMAP GNU Mailutils imap4d hex attempt || cve,2005-2878 || bugtraq,14794 || nessus,19605 || url,www.osvdb.org/displayvuln.php?osvdb_id=19306
+100000208 || COMMUNITY MISC Tunneling IP over DNS with NSTX || url,nstx.dereference.de/nstx/ || url,slashdot.org/articles/00/09/10/2230242.shtml
+100000209 || COMMUNITY WEB-MISC FtpLocate flsearch.pl possible command execution attempt || bugtraq,14367 || cve,2005-2420 || nessus,19300 || url,www.osvdb.org/displayvuln.php?osvdb_id=18305
+100000210 || COMMUNITY WEB-MISC generic cmd pipe after = attempt
+100000211 || COMMUNITY WEB-PHP Gallery g2_itemId access || bugtraq,15108 || cve,2005-0222 || nessus,20015 || url,www.osvdb.org/displayvuln.php?osvdb_id=13034
+100000212 || COMMUNITY WEB-PHP Gallery g2_return access || bugtraq,15108 || cve,2005-0222 || nessus,20015 || url,www.osvdb.org/displayvuln.php?osvdb_id=13034
+100000213 || COMMUNITY WEB-PHP Gallery g2_view access || bugtraq,15108 || cve,2005-0222 || nessus,20015 || url,www.osvdb.org/displayvuln.php?osvdb_id=13034
+100000214 || COMMUNITY WEB-PHP Gallery g2_subView access || bugtraq,15108 || cve,2005-0222 || nessus,20015 || url,www.osvdb.org/displayvuln.php?osvdb_id=13034
+100000215 || COMMUNITY DOS Trend Micro ServerProtect EarthAgent attempt || cve,2005-1928 || url,www.idefense.com/application/poi/display?id=356&type=vulnerabilities
+100000216 || COMMUNITY WEB-MISC Trend Micro ServerProtect isaNVWRequest.dll access || cve,2005-1929 || url,www.idefense.com/application/poi/display?id=353&type=vulnerabilities
+100000217 || COMMUNITY WEB-MISC man2web cmd exec attempt || cve,2005-2812 || bugtraq,14747 || nessus,19591
+100000218 || COMMUNITY WEB-PHP MailGust SQL Injection email attempt || bugtraq,14933 || cve,2005-3063 || nessus,19947
+100000219 || COMMUNITY SMTP MIME-Type ms-tnef access || bugtraq,16197 || cve,2006-0002 || url,www.microsoft.com/technet/security/bulletin/MS06-003.mspx
+100000220 || COMMUNITY WEB-PHP PHP-Nuke admin_styles.php phpbb_root_path access || url,www.autistici.org/anacron-group-italy/file/txt/sile002adv.txt || url,www.osvdb.org/displayvuln.php?osvdb_id=16244
+100000221 || COMMUNITY WEB-PHP AppServ main.php appserv_root param access || url,www.osvdb.org/displayvuln.php?osvdb_id=22228
+100000222 || COMMUNITY MISC TFTP32 Get Format string attempt || url,www.securityfocus.com/archive/1/422405/30/0/threaded || url,www.critical.lt/?vulnerabilities/200
+100000223 || COMMUNITY EXPLOIT SIP UDP Softphone overflow attempt || bugtraq,16213 || cve,2006-0189
+100000224 || COMMUNITY SMTP Mozilla filename overflow attempt || bugtraq,16271
+100000225 || COMMUNITY WEB-MISC ASPSurvey Login_Validate.asp Password param access || cve,2006-0192
+100000226 || COMMUNITY VIRUS Possible BlackWorm or Nymex infected host || url,www.microsoft.com/security/encyclopedia/details.aspx?name=Win32%2fMywife.E%40mm || url,cme.mitre.org/data/list.html#24 || url,isc.sans.org/blackworm
+100000227 || COMMUNITY MISC SNMP trap Format String detected || bugtraq,16267 || cve,2006-0250 || url,www.osvdb.org/displayvuln.php?osvdb_id=22493
+100000228 || COMMUNITY WEB-CLIENT Winamp PlayList buffer overflow attempt || bugtraq,16410 || cve,2006-0476 || url,www.frsirt.com/english/advisories/2006/0361
+100000229 || COMMUNITY MISC Lotus Domino LDAP attack || bugtraq,16523 || cve,2006-0580 || url,lists.immunitysec.com/pipermail/dailydave/2006-February/002896.html
+100000230 || COMMUNITY MISC Jabber/Google Talk Outgoing Traffic || url,www.google.com/talk/
+100000231 || COMMUNITY MISC Jabber/Google Talk Outgoing Auth || url,www.google.com/talk/
+100000232 || COMMUNITY MISC Google Talk Logon || url,www.google.com/talk/
+100000233 || COMMUNITY MISC Jabber/Google Talk Outoing Message || url,www.google.com/talk/
+100000234 || COMMUNITY MISC Jabber/Google Talk Log Out || url,www.google.com/talk/
+100000235 || COMMUNITY MISC Jabber/Google Talk Logon Success || url,www.google.com/talk/
+100000236 || COMMUNITY MISC Jabber/Google Talk Incoming Message || url,www.google.com/talk/
+100000237 || COMMUNITY WEB-MISC Proxy Bypass Via Google Translation Same To And From Language || url,www.boingboing.net/2006/02/22/argonne_national_lab.html
+100000238 || COMMUNITY WEB-CLIENT IE mulitple event handler heap overflow attempt || bugtraq,17131 || cve,2006-1245 || url,www.microsoft.com/technet/security/Bulletin/MS06-013.mspx
+100000239 || COMMUNITY WEB-CLIENT IE createTextRange overflow attempt || bugtraq,17196 || cve,2006-1359 || url,www.microsoft.com/technet/security/Bulletin/MS06-013.mspx
+100000240 || COMMUNITY BOT IRC Traffic Detected By Nick Change
+100000241 || COMMUNITY BOT Internal IRC server detected
+100000242 || COMMUNITY BOT Agobot/PhatBot bot.about command
+100000243 || COMMUNITY BOT Agobot/PhatBot bot.die command
+100000244 || COMMUNITY BOT Agobot/PhatBot bot.dns command
+100000245 || COMMUNITY BOT Agobot/PhatBot bot.execute command
+100000246 || COMMUNITY BOT Agobot/PhatBot bot.id command
+100000247 || COMMUNITY BOT Agobot/PhatBot bot.nick command
+100000248 || COMMUNITY BOT Agobot/PhatBot bot.open command
+100000249 || COMMUNITY BOT Agobot/PhatBot bot.remove command
+100000250 || COMMUNITY BOT Agobot/PhatBot bot.removeallbut command
+100000251 || COMMUNITY BOT Agobot/PhatBot bot.rndnick command
+100000252 || COMMUNITY BOT Agobot/PhatBot bot.status command
+100000253 || COMMUNITY BOT Agobot/PhatBot bot.sysinfo command
+100000254 || COMMUNITY BOT Agobot/PhatBot bot.longuptime command
+100000255 || COMMUNITY BOT Agobot/PhatBot bot.highspeed command
+100000256 || COMMUNITY BOT Agobot/PhatBot bot.quit command
+100000257 || COMMUNITY BOT Agobot/PhatBot bot.flushdns command
+100000258 || COMMUNITY BOT Agobot/PhatBot bot.secure command
+100000259 || COMMUNITY BOT Agobot/PhatBot bot.unsecure command
+100000260 || COMMUNITY BOT Agobot/PhatBot bot.command command
+100000261 || COMMUNITY BOT SDBot killthread command
+100000262 || COMMUNITY BOT SDBot cdkey command
+100000263 || COMMUNITY BOT SDBot getcdkey command
+100000264 || COMMUNITY BOT SDBot rndnick command
+100000265 || COMMUNITY BOT SDBot c_rndnick command
+100000266 || COMMUNITY BOT SDBot c_nick command
+100000267 || COMMUNITY BOT SpyBot stopspy  command
+100000268 || COMMUNITY BOT SpyBot redirectspy  command
+100000269 || COMMUNITY BOT SpyBot loadclones command
+100000270 || COMMUNITY BOT SpyBot killclones command
+100000271 || COMMUNITY BOT SpyBot rawclones  command
+100000272 || COMMUNITY BOT GTBot ver command
+100000273 || COMMUNITY BOT GTBot info command
+100000274 || COMMUNITY BOT GTBot scan command
+100000275 || COMMUNITY BOT GTBot portscan command
+100000276 || COMMUNITY BOT GTBot stopscan command
+100000277 || COMMUNITY BOT GTBot packet command
+100000278 || COMMUNITY BOT GTBot bnc command
+100000279 || COMMUNITY SMTP Incoming WAB attachment || cve,2006-0014 || url,www.microsoft.com/technet/security/bulletin/MS06-016.mspx
+100000281 || COMMUNITY MISC Connect Direct Server - Session Terminated Invalid Credentials
+100000282 || COMMUNITY VIRUS Nugache connect
+100000283 || COMMUNITY VIRUS Nugache data || url,securityresponse.symantec.com/avcenter/venc/data/w32.nugache.a@mm.html
+100000284 || COMMUNITY WEB-CLIENT RealMedia invalid chunk size heap overflow attempt || bugtraq,17202 || cve,2005-2922 || url,service.real.com/realplayer/security/03162006_player/en/
+100000285 || COMMUNITY WEB-PHP ldap_var.inc.php remote file include attempt || bugtraq,17915
+100000286 || COMMUNITY WEB-PHP X Poll admin access || url,marc.theaimsgroup.com/?l=bugtraq&m=114710173409997&w=2
+100000287 || COMMUNITY WEB-PHP Claroline ldap.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000288 || COMMUNITY WEB-PHP Claroline atutor.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000289 || COMMUNITY WEB-PHP Claroline db-generic.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000290 || COMMUNITY WEB-PHP Claroline docebo.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000291 || COMMUNITY WEB-PHP Claroline dokeos.1.6.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000292 || COMMUNITY WEB-PHP Claroline dokeos.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000293 || COMMUNITY WEB-PHP Claroline ganesha.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000294 || COMMUNITY WEB-PHP Claroline mambo.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000295 || COMMUNITY WEB-PHP Claroline moodle.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000296 || COMMUNITY WEB-PHP Claroline phpnuke.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000297 || COMMUNITY WEB-PHP Claroline postnuke.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000298 || COMMUNITY WEB-PHP Claroline spip.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000299 || COMMUNITY WEB-PHP Claroline event/init_event_manager.inc.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000300 || COMMUNITY WEB-PHP Claroline export_exe_tracking.class.php access || url,www.claroline.net || url,marc.theaimsgroup.com/?l=full-disclosure&m=114710378713072&w=2
+100000301 || COMMUNITY SMTP McAfee WebShield SMTP bounce message format string attempt || bugtraq,16742 || cve,2006-0559
+100000302 || COMMUNITY WEB-MISC DeviceSelection.asp sRedirectUrl parameter access || bugtraq,17964
+100000303 || COMMUNITY WEB-MISC DeviceSelection.asp sCancelURL parameter access || bugtraq,17964
+100000304 || COMMUNITY WEB-PHP Gphoto index.php rep parameter remote file include attempt || url,marc.theaimsgroup.com/?l=bugtraq&m=114754094110073&w=2
+100000305 || COMMUNITY WEB-PHP Gphoto index.php image parameter remote file include attempt || url,marc.theaimsgroup.com/?l=bugtraq&m=114754094110073&w=2
+100000306 || COMMUNITY WEB-PHP Gphoto diapho.php rep parameter remote file include attempt || url,marc.theaimsgroup.com/?l=bugtraq&m=114754094110073&w=2
+100000307 || COMMUNITY WEB-PHP Gphoto diapho.php image parameter remote file include attempt || url,marc.theaimsgroup.com/?l=bugtraq&m=114754094110073&w=2
+100000308 || COMMUNITY WEB-PHP Gphoto affich.php rep parameter remote file include attempt || url,marc.theaimsgroup.com/?l=bugtraq&m=114754094110073&w=2
+100000309 || COMMUNITY WEB-PHP Gphoto affich.php image parameter remote file include attempt || url,marc.theaimsgroup.com/?l=bugtraq&m=114754094110073&w=2
+100000310 || COMMUNITY VIRUS Ginwui.B command server dns query attempt - scfzf.xicp.net || url,vil.nai.com/vil/content/v_139545.htm
+100000311 || COMMUNITY VIRUS Ginwui.B command server dns query attempt - localhosts.3322.org || url,vil.nai.com/vil/content/v_139545.htm
+100000312 || COMMUNITY VIRUS Ginwui.B POST attempt || url,vil.nai.com/vil/content/v_139545.htm
+100000313 || COMMUNITY WEB-MISC 3Com Network Supervisor directory traversal || bugtraq,14715 || cve,2005-2020
+100000314 || COMMUNITY WEB-MISC MediaWiki parser script insertion attempt || cve,2006-2611
+100000315 || COMMUNITY WEB-MISC HTTP PUT Request || url,infosecpotpourri.blogspot.com/2006/06/http-put-defacement-attempts.html
+100000316 || COMMUNITY WEB-MISC HTTP PUT Request Successful || url,infosecpotpourri.blogspot.com/2006/06/http-put-defacement-attempts.html
+100000317 || COMMUNITY WEB-MISC phpBazar classified_right.php remote file include || bugtraq,18052
+100000318 || COMMUNITY WEB-MISC phpBazar admin.php unauthorized administrative access || bugtraq,18053 || cve,2006-2527
+100000319 || COMMUNITY WEB-MISC ActualScripts direct.php remote file include || bugtraq,17597
+100000320 || COMMUNITY WEB-MISC ScozNet ScozNews functions.php remote file include || bugtraq,18027
+100000321 || COMMUNITY WEB-MISC ScozNet ScozNews help.php remote file include || bugtraq,18027
+100000322 || COMMUNITY WEB-MISC ScozNet ScozNews mail.php remote file include || bugtraq,18027
+100000323 || COMMUNITY WEB-MISC ScozNet ScozNews news.php remote file include || bugtraq,18027
+100000324 || COMMUNITY WEB-MISC ScozNet ScozNews template.php remote file include || bugtraq,18027
+100000325 || COMMUNITY WEB-MISC ScozNet ScozNews admin_cats.php remote file include || bugtraq,18027
+100000326 || COMMUNITY WEB-MISC ScozNet ScozNews admin_edit.php remote file include || bugtraq,18027
+100000327 || COMMUNITY WEB-MISC ScozNet ScozNews admin_import.php remote file include || bugtraq,18027
+100000328 || COMMUNITY WEB-MISC ScozNet ScozNews admin_templates.php remote file include || bugtraq,18027
+100000329 || COMMUNITY WEB-MISC Invision Power Board class_post.php remote file include || bugtraq,18040
+100000330 || COMMUNITY WEB-MISC Invision Power Board moderate.php remote file include || bugtraq,18040
+100000331 || COMMUNITY WEB-MISC ZixForum settings.asp access || bugtraq,18043
+100000332 || COMMUNITY WEB-MISC Artmedic Newsletter log.php access || bugtraq,18047
+100000333 || COMMUNITY WEB-MISC Artmedic Newsletter log.php access || bugtraq,18047
+100000334 || COMMUNITY WEB-MISC CaLogic Calendars reconfig.php remote file include || bugtraq,18076
+100000335 || COMMUNITY WEB-MISC CaLogic Calendars srxclr.php remote file include || bugtraq,18076
+100000336 || COMMUNITY WEB-MISC phpMyDirectory footer.php remote file include || cve,2006-2521
+100000337 || COMMUNITY WEB-MISC phpMyDirectory defaults_setup.php remote file include || cve,2006-2521
+100000338 || COMMUNITY WEB-MISC phpMyDirectory header.php remote file include || cve,2006-2521
+100000339 || COMMUNITY WEB-MISC V-Webmail core.php remote file include || url,secunia.com/advisories/20297/
+100000340 || COMMUNITY WEB-MISC V-Webmail pop3.php remote file include || url,secunia.com/advisories/20297/
+100000341 || COMMUNITY WEB-MISC DoceboLMS help.php remote file include || bugtraq,18110
+100000342 || COMMUNITY WEB-MISC DoceboLMS business.php remote file include || bugtraq,18110
+100000343 || COMMUNITY WEB-MISC DoceboLMS credits.php remote file include || bugtraq,18110
+100000344 || COMMUNITY WEB-MISC SocketMail index.php remote file include || url,secunia.com/advisories/20273/
+100000345 || COMMUNITY WEB-MISC SocketMail inc-common.php remote file include || url,secunia.com/advisories/20273/
+100000346 || COMMUNITY WEB-MISC Plume CMS prepend.php remote file include || bugtraq,16662
+100000347 || COMMUNITY WEB-MISC Ezupload Pro form.php remote file include || bugtraq,18135
+100000348 || COMMUNITY WEB-MISC Ezupload Pro customize.php remote file include || bugtraq,18135
+100000349 || COMMUNITY WEB-MISC Ezupload Pro initialize.php remote file include || bugtraq,18135
+100000350 || COMMUNITY WEB-MISC UBBThreads ubbt.inc.php remote file include || url,www.nukedx.com/?viewdoc=40
+100000351 || COMMUNITY WEB-MISC UBBThreads config[cookieprefix] remote file include || url,www.nukedx.com/?viewdoc=40
+100000352 || COMMUNITY WEB-MISC Blend Portal blend_common.php remote file include || bugtraq,18153 || url,www.nukedx.com/?viewdoc=41
+100000353 || COMMUNITY WEB-MISC tinyBB footers.php remote file include || bugtraq,18147
+100000354 || COMMUNITY WEB-MISC phpBB-Amod lang_activity.php remote file include || bugtraq,18155
+100000355 || COMMUNITY WEB-MISC eSyndiCat cron.php remote file include || url,secunia.com/advisories/20218/
+100000356 || COMMUNITY WEB-MISC BASE base_qry_common.php remote file include || url,secunia.com/advisories/20300/
+100000357 || COMMUNITY WEB-MISC BASE base_stat_common.php remote file include || url,secunia.com/advisories/20300/
+100000358 || COMMUNITY WEB-MISC BASE base_include.inc.php remote file include || url,secunia.com/advisories/20300/
+100000359 || COMMUNITY WEB-MISC Fastpublish CMS drucken.php remote file include || bugtraq,18163
+100000360 || COMMUNITY WEB-MISC Fastpublish CMS drucken2.php remote file include || bugtraq,18163
+100000361 || COMMUNITY WEB-MISC Fastpublish CMS email_an_benutzer.php remote file include || bugtraq,18163
+100000362 || COMMUNITY WEB-MISC Fastpublish CMS rechnung.php remote file include || bugtraq,18163
+100000363 || COMMUNITY WEB-MISC Fastpublish CMS search.php remote file include || bugtraq,18163
+100000364 || COMMUNITY WEB-MISC Fastpublish CMS admin.php remote file include || bugtraq,18163
+100000365 || COMMUNITY WEB-MISC phpNuke index.php remote file include || bugtraq,18186
+100000366 || COMMUNITY WEB-MISC phpNuke admin_ug_auth.php remote file include || bugtraq,18186
+100000367 || COMMUNITY WEB-MISC phpNuke admin_board.php remote file include || bugtraq,18186
+100000368 || COMMUNITY WEB-MISC phpNuke admin_disallow.php remote file include || bugtraq,18186
+100000369 || COMMUNITY WEB-MISC phpNuke admin_forumauth.php remote file include || bugtraq,18186
+100000370 || COMMUNITY WEB-MISC phpNuke admin_groups.php remote file include || bugtraq,18186
+100000371 || COMMUNITY WEB-MISC phpNuke admin_ranks.php remote file include || bugtraq,18186
+100000372 || COMMUNITY WEB-MISC phpNuke admin_styles.php remote file include || bugtraq,18186
+100000373 || COMMUNITY WEB-MISC phpNuke admin_user_ban.php remote file include || bugtraq,18186
+100000374 || COMMUNITY WEB-MISC phpNuke admin_words.php remote file include || bugtraq,18186
+100000375 || COMMUNITY WEB-MISC phpNuke admin_avatar.php remote file include || bugtraq,18186
+100000376 || COMMUNITY WEB-MISC phpNuke admin_db_utilities.php remote file include || bugtraq,18186
+100000377 || COMMUNITY WEB-MISC phpNuke admin_forum_prune.php remote file include || bugtraq,18186
+100000378 || COMMUNITY WEB-MISC phpNuke admin_forums.php remote file include || bugtraq,18186
+100000379 || COMMUNITY WEB-MISC phpNuke admin_mass_email.php remote file include || bugtraq,18186
+100000380 || COMMUNITY WEB-MISC phpNuke admin_smilies.php remote file include || bugtraq,18186
+100000381 || COMMUNITY DELETED phpNuke admin_ug_auth.php remote file include || bugtraq,18186
+100000382 || COMMUNITY WEB-MISC phpNuke admin_users.php remote file include || bugtraq,18186
+100000383 || COMMUNITY WEB-MISC OsTicket open_form.php remote file include || bugtraq,18190
+100000384 || COMMUNITY WEB-MISC Ottoman index.php remote file include || bugtraq,18208
+100000385 || COMMUNITY WEB-MISC Ottoman error.php remote file include || bugtraq,18208
+100000386 || COMMUNITY WEB-MISC Ottoman main_class.php remote file include || bugtraq,18208
+100000387 || COMMUNITY WEB-MISC Ovidentia index.php remote file include || bugtraq,18232
+100000388 || COMMUNITY WEB-MISC Ovidentia topman.php remote file include || bugtraq,18232
+100000389 || COMMUNITY WEB-MISC Ovidentia approb.php remote file include || bugtraq,18232
+100000390 || COMMUNITY WEB-MISC Ovidentia vacadmb.php remote file include || bugtraq,18232
+100000391 || COMMUNITY WEB-MISC Ovidentia vacadma.php remote file include || bugtraq,18232
+100000392 || COMMUNITY WEB-MISC Ovidentia vacadm.php remote file include || bugtraq,18232
+100000393 || COMMUNITY WEB-MISC Ovidentia start.php remote file include || bugtraq,18232
+100000394 || COMMUNITY WEB-MISC Ovidentia search.php remote file include || bugtraq,18232
+100000395 || COMMUNITY WEB-MISC Ovidentia posts.php remote file include || bugtraq,18232
+100000396 || COMMUNITY WEB-MISC Ovidentia options.php remote file include || bugtraq,18232
+100000397 || COMMUNITY WEB-MISC Ovidentia login.php remote file include || bugtraq,18232
+100000398 || COMMUNITY WEB-MISC Ovidentia frchart.php remote file include || bugtraq,18232
+100000399 || COMMUNITY WEB-MISC Ovidentia flbchart.php remote file include || bugtraq,18232
+100000400 || COMMUNITY WEB-MISC Ovidentia fileman.php remote file include || bugtraq,18232
+100000401 || COMMUNITY WEB-MISC Ovidentia faq.php remote file include || bugtraq,18232
+100000402 || COMMUNITY WEB-MISC Ovidentia event.php remote file include || bugtraq,18232
+100000403 || COMMUNITY WEB-MISC Ovidentia directory.php remote file include || bugtraq,18232
+100000404 || COMMUNITY WEB-MISC Ovidentia articles.php remote file include || bugtraq,18232
+100000405 || COMMUNITY WEB-MISC Ovidentia artedit.php remote file include || bugtraq,18232
+100000406 || COMMUNITY WEB-MISC Ovidentia approb.php remote file include || bugtraq,18232
+100000407 || COMMUNITY WEB-MISC Ovidentia calday.php remote file include || bugtraq,18232
+100000408 || COMMUNITY WEB-MISC AssoCIateD cache_mngt.php remote file include || bugtraq,18220
+100000409 || COMMUNITY WEB-MISC AssoCIateD gallery_functions.php remote file include || bugtraq,18220
+100000410 || COMMUNITY WEB-MISC REDAXO index.inc.php remote file include || bugtraq,18229
+100000411 || COMMUNITY WEB-MISC REDAXO index.inc.php remote file include || bugtraq,18229
+100000412 || COMMUNITY WEB-MISC REDAXO index.inc.php remote file include || bugtraq,18229
+100000413 || COMMUNITY WEB-MISC REDAXO index.inc.php remote file include || bugtraq,18229
+100000414 || COMMUNITY WEB-MISC REDAXO community.inc.php remote file include || bugtraq,18229
+100000415 || COMMUNITY WEB-MISC Bytehoard server.php remote file include || bugtraq,18234
+100000416 || COMMUNITY WEB-MISC MyBloggie admin.php remote file include || bugtraq,18241
+100000417 || COMMUNITY WEB-MISC MyBloggie scode.php remote file include || bugtraq,18241
+100000418 || COMMUNITY WEB-MISC Ashwebstudio Ashnews ashheadlines.php remote file include || bugtraq,18248
+100000419 || COMMUNITY WEB-MISC Ashwebstudio Ashnews ashnews.php remote file include || bugtraq,18248
+100000420 || COMMUNITY WEB-MISC Informium common-menu.php remote file include || bugtraq,18249
+100000421 || COMMUNITY WEB-MISC Igloo wiki.php remote file include || bugtraq,18250
+100000422 || COMMUNITY WEB-MISC phpBB template.php remote file include || bugtraq,18255
+100000423 || COMMUNITY WEB-MISC DotWidget CMS index.php remote file include || bugtraq,18258
+100000424 || COMMUNITY WEB-MISC DotWidget CMS feedback.php remote file include || bugtraq,18258
+100000425 || COMMUNITY WEB-MISC DotWidget CMS printfriendly.php remote file include || bugtraq,18258
+100000426 || COMMUNITY WEB-MISC DotClear prepend.php remote file include || bugtraq,18259
+100000427 || COMMUNITY WEB-MISC JBoss jmx-console html adaptor access || url,jboss.org/wiki/Wiki.jsp?page=JMXConsole
+100000428 || COMMUNITY WEB-MISC JBoss RMI class download service directory listing attempt || url,marc.theaimsgroup.com/?l=bugtraq&m=111911095424496&w=2
+100000429 || COMMUNITY WEB-MISC JBoss web-console access || url,www.jboss.org/wiki/Wiki.jsp?page=WebConsole
+100000430 || COMMUNITY WEB-MISC BlueShoes Bs_Faq.class.php remote file include || bugtraq,18261
+100000431 || COMMUNITY WEB-MISC BlueShoes fileBrowserInner.php remote file include || bugtraq,18261
+100000432 || COMMUNITY WEB-MISC BlueShoes file.php remote file include || bugtraq,18261
+100000433 || COMMUNITY WEB-MISC BlueShoes viewer.php remote file include || bugtraq,18261
+100000434 || COMMUNITY WEB-MISC BlueShoes Bs_ImageArchive.class.php remote file include || bugtraq,18261
+100000435 || COMMUNITY WEB-MISC BlueShoes Bs_Ml_User.class.php remote file include || bugtraq,18261
+100000436 || COMMUNITY WEB-MISC BlueShoes Bs_Wse_Profile.class.php remote file include || bugtraq,18261
+100000437 || COMMUNITY WEB-MISC CS-Cart class.cs_phpmailer.php remote file include || bugtraq,18263
+100000438 || COMMUNITY WEB-MISC Claroline mambo.inc.php remote file include || bugtraq,18265
+100000439 || COMMUNITY WEB-MISC Claroline postnuke.inc.php remote file include || bugtraq,18265
+100000440 || COMMUNITY WEB-MISC CyBoards common.php remote file include || bugtraq,18272
+100000441 || COMMUNITY WEB-MISC Wikiwig wk_lang.php remote file include || bugtraq,18291
+100000442 || COMMUNITY WEB-MISC MiraksGalerie pcltar.lib.php remote file include || bugtraq,18313
+100000443 || COMMUNITY WEB-MISC MiraksGalerie galimage.lib.php remote file include || bugtraq,18313
+100000444 || COMMUNITY WEB-MISC MiraksGalerie galsecurity.lib.php remote file include || bugtraq,18313
+100000445 || COMMUNITY WEB-PHP Particle Gallery Viewimage PHP Variable Injection Attempt || bugtraq,18270
+100000446 || COMMUNITY WEB-PHP Particle Wiki PHP SQL Injection attempt || bugtraq,18273
+100000447 || COMMUNITY WEB-CLIENT Mozilla Firefox DOMNodeRemoved attack attempt || bugtraq,18228 || cve,2006-2779
+100000448 || COMMUNITY WEB-MISC OfficeFlow default.asp xss attempt || bugtraq,18367
+100000449 || COMMUNITY WEB-MISC OfficeFlow files.asp MSSQL injection attempt || bugtraq,18367
+100000450 || COMMUNITY WEB-MISC VanillaSoft Helpdesk default.asp xss attempt || bugtraq,18368
+100000451 || COMMUNITY WEB-MISC KAPhotoservice album.asp xss attempt || bugtraq,18379
+100000452 || COMMUNITY WEB-MISC KAPhotoservice album.asp xss attempt || bugtraq,18379
+100000453 || COMMUNITY WEB-MISC KAPhotoservice edtalbum.asp xss attempt || bugtraq,18379
+100000454 || COMMUNITY WEB-MISC KAPhotoservice edtalbum.asp xss attempt || bugtraq,18379
+100000455 || COMMUNITY WEB-MISC Axent Forum viewposts.cfm xss attempt || bugtraq,18473
+100000456 || COMMUNITY WEB-MISC SSPwiz index.cfm xss attempt || bugtraq,18482
+100000457 || COMMUNITY WEB-MISC ASP Stats pages.asp MSSQL injection attempt || bugtraq,18512
+100000458 || COMMUNITY WEB-MISC DPVision Tradingeye Shop details.cfm xss attempt || bugtraq,18526
+100000459 || COMMUNITY WEB-MISC WeBBoA yeni_host.asp MSSQL injection attempt || bugtraq,18564
+100000460 || COMMUNITY WEB-MISC AZureus index.tmpl xss attempt || bugtraq,18596
+100000461 || COMMUNITY WEB-MISC Open WebMail openwebmail-read.pl xss attempt || bugtraq,18598
+100000462 || COMMUNITY WEB-MISC Open WebMail openwebmail-read.pl xss attempt || bugtraq,18598
+100000463 || COMMUNITY WEB-PHP Joomla joomla.php remote file include || bugtraq,18363
+100000464 || COMMUNITY WEB-PHP LoveCompass AEPartner design.inc.php remote file include || bugtraq,18370
+100000465 || COMMUNITY WEB-PHP Empris sql_fcnsOLD.php remote file include || bugtraq,18371
+100000466 || COMMUNITY WEB-PHP Free QBoard post.php remote file include || bugtraq,18373
+100000467 || COMMUNITY WEB-PHP WebprojectDB nav.php remote file include || bugtraq,18378
+100000468 || COMMUNITY WEB-PHP WebprojectDB lang.php remote file include || bugtraq,18378
+100000469 || COMMUNITY WEB-PHP iFoto index.php xss attempt || bugtraq,18391
+100000470 || COMMUNITY WEB-PHP Foing manage_songs.php remote file include || bugtraq,18392
+100000471 || COMMUNITY WEB-PHP VBZoom show.php SQL injection attempt || bugtraq,18403
+100000472 || COMMUNITY WEB-PHP VBZoom show.php SQL injection attempt || bugtraq,18403
+100000473 || COMMUNITY WEB-PHP VBZoom language.php SQL injection attempt || bugtraq,18403
+100000474 || COMMUNITY WEB-PHP VBZoom meaning.php SQL injection attempt || bugtraq,18403
+100000475 || COMMUNITY WEB-PHP VBZoom meaning.php SQL injection attempt || bugtraq,18403
+100000476 || COMMUNITY WEB-PHP VBZoom meaning.php SQL injection attempt || bugtraq,18403
+100000477 || COMMUNITY WEB-PHP VBZoom subject.php SQL injection attempt || bugtraq,18403
+100000478 || COMMUNITY WEB-PHP aWebNews visview.php remote file include || bugtraq,18406
+100000479 || COMMUNITY WEB-PHP CzarNews headlines.php remote file include || bugtraq,18411
+100000480 || COMMUNITY WEB-PHP Somery team.php remote file include || bugtraq,18412
+100000481 || COMMUNITY WEB-PHP Hinton Design PHPHG signed.php remote file include || bugtraq,18413
+100000482 || COMMUNITY WEB-PHP BoastMachine vote.php remote file include || bugtraq,18415
+100000483 || COMMUNITY WEB-PHP Wheatblog view_links.php remote file include || bugtraq,18416
+100000484 || COMMUNITY WEB-PHP Confixx ftp_index.php xss attempt || bugtraq,18426
+100000485 || COMMUNITY WEB-PHP RahnemaCo page.php remote file include || bugtraq,18435
+100000486 || COMMUNITY WEB-PHP PhpBlueDragon CMS template.php remote file include || bugtraq,18440
+100000487 || COMMUNITY WEB-PHP ISPConfig server.inc.php remote file include || bugtraq,18441
+100000488 || COMMUNITY WEB-PHP ISPConfig app.inc.php remote file include || bugtraq,18441
+100000489 || COMMUNITY WEB-PHP ISPConfig login.php remote file include || bugtraq,18441
+100000490 || COMMUNITY WEB-PHP ISPConfig trylogin.php remote file include || bugtraq,18441
+100000491 || COMMUNITY WEB-PHP DeluxeBB posting.php remote file include || bugtraq,18455
+100000492 || COMMUNITY WEB-PHP DeluxeBB newpm.php remote file include || bugtraq,18455
+100000493 || COMMUNITY WEB-PHP DeluxeBB postreply.php remote file include || bugtraq,18455
+100000494 || COMMUNITY WEB-PHP Zeroboard write_ok.php xss attempt || bugtraq,18458
+100000495 || COMMUNITY WEB-PHP Zeroboard write_ok.php xss attempt || bugtraq,18458
+100000496 || COMMUNITY WEB-PHP Chipmailer index.php SQL injection attempt || bugtraq,18463
+100000497 || COMMUNITY WEB-PHP Calendarix cal_event.php SQL injection attempt || bugtraq,18469
+100000498 || COMMUNITY WEB-PHP Calendarix cal_popup.php SQL injection attempt || bugtraq,18469
+100000499 || COMMUNITY WEB-PHP PictureDis thumstbl.php remote file include || bugtraq,18471
+100000500 || COMMUNITY WEB-PHP PictureDis wpfiles.php remote file include || bugtraq,18471
+100000501 || COMMUNITY WEB-PHP PictureDis wallpapr.php remote file include || bugtraq,18471
+100000502 || COMMUNITY WEB-PHP Ji-Takz tag.class.php remote file include || bugtraq,18474
+100000503 || COMMUNITY WEB-PHP Nucleus CMS action.php remote file include || bugtraq,18475
+100000504 || COMMUNITY WEB-PHP Nucleus CMS media.php remote file include || bugtraq,18475
+100000505 || COMMUNITY WEB-PHP Nucleus CMS server.php remote file include || bugtraq,18475
+100000506 || COMMUNITY WEB-PHP Nucleus CMS api_metaweblog.inc.php remote file include || bugtraq,18475
+100000507 || COMMUNITY WEB-PHP FlashChat adminips.php remote file include || bugtraq,18480
+100000508 || COMMUNITY WEB-PHP Wikkawiki wakka.php access || bugtraq,18481
+100000509 || COMMUNITY WEB-PHP RahnemaCo page.php remote file include || bugtraq,18490
+100000510 || COMMUNITY WEB-PHP VBZoom rank.php SQL injection attempt || bugtraq,18497
+100000511 || COMMUNITY WEB-PHP VBZoom message.php SQL injection attempt || bugtraq,18497
+100000512 || COMMUNITY WEB-PHP VBZoom lng.php SQL injection attempt || bugtraq,18497
+100000513 || COMMUNITY WEB-PHP SAPHPLesson showcat.php SQL injection attempt || bugtraq,18501
+100000514 || COMMUNITY WEB-PHP SAPHPLesson misc.php SQL injection attempt || bugtraq,18501
+100000515 || COMMUNITY WEB-PHP CMS Faethon header.php xss attempt || bugtraq,18505
+100000516 || COMMUNITY WEB-PHP CMS Faethon footer.php xss attempt || bugtraq,18505
+100000517 || COMMUNITY WEB-PHP e107 search.php xss attempt || bugtraq,18508
+100000518 || COMMUNITY WEB-PHP PHP Live Helper initiate.php remote file include || bugtraq,18509
+100000519 || COMMUNITY WEB-PHP VUBB index.php SQL injection attempt || bugtraq,18516
+100000520 || COMMUNITY WEB-PHP Xarancms xaramcms_haupt.php SQL injection attempt || bugtraq,18520
+100000521 || COMMUNITY WEB-PHP TPL Design TplShop category.php SQL injection attempt || bugtraq,18524
+100000522 || COMMUNITY WEB-PHP The Edge eCommerce Shop productDetail.php xss attempt || bugtraq,18528
+100000523 || COMMUNITY WEB-PHP CavoxCms index.php SQL injection attempt || bugtraq,18533
+100000524 || COMMUNITY WEB-PHP Micro CMS microcms-include.php remote file include || bugtraq,18537
+100000525 || COMMUNITY WEB-PHP PHPMyDirectory offer-pix.php xss attempt || bugtraq,18539
+100000526 || COMMUNITY WEB-PHP PHPMyDirectory index.php xss attempt || bugtraq,18539
+100000527 || COMMUNITY WEB-PHP AssoCIateD index.php xss attempt || bugtraq,18541
+100000528 || COMMUNITY WEB-PHP PHPMyForum topic.php xss attempt || bugtraq,18542
+100000529 || COMMUNITY WEB-PHP NC Linklist index.php xss attempt || bugtraq,18546
+100000530 || COMMUNITY WEB-PHP NC Linklist index.php xss attempt || bugtraq,18546
+100000531 || COMMUNITY WEB-PHP BtitTracker torrents.php SQL injection attempt || bugtraq,18549
+100000532 || COMMUNITY WEB-PHP BtitTracker torrents.php SQL injection attempt || bugtraq,18549
+100000533 || COMMUNITY WEB-PHP VUBB functions.php SQL injection attempt || bugtraq,18561
+100000534 || COMMUNITY WEB-PHP VUBB english.php xss attempt || bugtraq,18562
+100000535 || COMMUNITY WEB-PHP IMGallery galeria.php SQL injection attempt || bugtraq,18566
+100000536 || COMMUNITY WEB-PHP IMGallery galeria.php SQL injection attempt || bugtraq,18566
+100000537 || COMMUNITY WEB-PHP thinkWMS index.php SQL injection attempt || bugtraq,18567
+100000538 || COMMUNITY WEB-PHP thinkWMS index.php SQL injection attempt || bugtraq,18567
+100000539 || COMMUNITY WEB-PHP thinkWMS printarticle.php SQL injection attempt || bugtraq,18567
+100000540 || COMMUNITY WEB-PHP Enterprise Groupware index.php xss attempt || bugtraq,18590
+100000541 || COMMUNITY WEB-PHP Dating Agent picture.php SQL injection attempt || bugtraq,18607
+100000542 || COMMUNITY WEB-PHP Dating Agent mem.php SQL injection attempt || bugtraq,18607
+100000543 || COMMUNITY WEB-PHP Dating Agent search.php SQL injection attempt || bugtraq,18607
+100000544 || COMMUNITY WEB-PHP Dating Agent search.php SQL injection attempt || bugtraq,18607
+100000545 || COMMUNITY WEB-PHP PHP Blue Dragon CMS team_admin.php remote file include || bugtraq,18609
+100000546 || COMMUNITY WEB-PHP PHP Blue Dragon CMS rss_admin.php remote file include || bugtraq,18609
+100000547 || COMMUNITY WEB-PHP PHP Blue Dragon CMS manual_admin.php remote file include || bugtraq,18609
+100000548 || COMMUNITY WEB-PHP PHP Blue Dragon CMS forum_admin.php remote file include || bugtraq,18609
+100000549 || COMMUNITY WEB-PHP Custom Datin Biz user_view.php xss attempt || bugtraq,18626
+100000550 || COMMUNITY WEB-PHP Project Eros BBSEngine comment.php access || bugtraq,18627
+100000551 || COMMUNITY WEB-PHP Project Eros BBSEngine aolbonics.php access || bugtraq,18627
+100000552 || COMMUNITY WEB-PHP SmartSiteCMS inc_foot.php remote file include || bugtraq,18628
+100000553 || COMMUNITY WEB-PHP PHPMySMS gateway.php remote file include || bugtraq,18633
+100000554 || COMMUNITY WEB-PHP VebiMiau error.php xss attempt || bugtraq,18643
+100000555 || COMMUNITY WEB-PHP VebiMiau error.php xss attempt || bugtraq,18643
+100000556 || COMMUNITY WEB-PHP VebiMiau error.php xss attempt || bugtraq,18643
+100000557 || COMMUNITY WEB-PHP VebiMiau index.php xss attempt || bugtraq,18643
+100000558 || COMMUNITY WEB-PHP VebiMiau messages.php xss attempt || bugtraq,18643
+100000559 || COMMUNITY WEB-PHP Infinite Core Technologies ICT index.php SQL injection attempt || bugtraq,18644
+100000560 || COMMUNITY WEB-PHP eNpaper1 root_header.php remote file include || bugtraq,18649
+100000561 || COMMUNITY WEB-PHP dotProject ui.class.php xss attempt || bugtraq,18650
+100000562 || COMMUNITY WEB-PHP GL-SH Deaf Forum show.php xss attempt || bugtraq,18651
+100000563 || COMMUNITY WEB-PHP GL-SH Deaf Forum show.php xss attempt || bugtraq,18651
+100000564 || COMMUNITY WEB-PHP GL-SH Deaf Forum show.php xss attempt || bugtraq,18651
+100000565 || COMMUNITY WEB-PHP GL-SH Deaf Forum show.php xss attempt || bugtraq,18651
+100000566 || COMMUNITY WEB-PHP XennoBB messages.php xss attempt || bugtraq,18652
+100000567 || COMMUNITY WEB-PHP Qdig index.php xss attempt || bugtraq,18653
+100000568 || COMMUNITY WEB-PHP Qdig index.php xss attempt || bugtraq,18653
+100000569 || COMMUNITY WEB-PHP Indexu app_change_email.php remote file include || bugtraq,18477
+100000570 || COMMUNITY WEB-PHP Indexu app_change_pwd.php remote file include || bugtraq,18477
+100000571 || COMMUNITY WEB-PHP Indexu app_mod_rewrite.php remote file include || bugtraq,18477
+100000572 || COMMUNITY WEB-PHP Indexu app_page_caching.php remote file include || bugtraq,18477
+100000573 || COMMUNITY WEB-PHP Indexu app_setup.php remote file include || bugtraq,18477
+100000574 || COMMUNITY WEB-PHP Indexu cat_add.php remote file include || bugtraq,18477
+100000575 || COMMUNITY WEB-PHP Indexu cat_delete.php remote file include || bugtraq,18477
+100000576 || COMMUNITY WEB-PHP Indexu cat_edit.php remote file include || bugtraq,18477
+100000577 || COMMUNITY WEB-PHP Indexu cat_path_update.php remote file include || bugtraq,18477
+100000578 || COMMUNITY WEB-PHP Indexu cat_search.php remote file include || bugtraq,18477
+100000579 || COMMUNITY WEB-PHP Indexu cat_struc.php remote file include || bugtraq,18477
+100000580 || COMMUNITY WEB-PHP Indexu cat_view.php remote file include || bugtraq,18477
+100000581 || COMMUNITY WEB-PHP Indexu cat_view_hidden.php remote file include || bugtraq,18477
+100000582 || COMMUNITY WEB-PHP Indexu cat_view_hierarchy.php remote file include || bugtraq,18477
+100000583 || COMMUNITY WEB-PHP Indexu cat_view_registered_only.php remote file include || bugtraq,18477
+100000584 || COMMUNITY WEB-PHP Indexu checkurl_web.php remote file include || bugtraq,18477
+100000585 || COMMUNITY WEB-PHP Indexu db_alter.php remote file include || bugtraq,18477
+100000586 || COMMUNITY WEB-PHP Indexu db_alter_change.php remote file include || bugtraq,18477
+100000587 || COMMUNITY WEB-PHP Indexu db_backup.php remote file include || bugtraq,18477
+100000588 || COMMUNITY WEB-PHP Indexu db_export.php remote file include || bugtraq,18477
+100000589 || COMMUNITY WEB-PHP Indexu db_import.php remote file include || bugtraq,18477
+100000590 || COMMUNITY WEB-PHP Indexu editor_add.php remote file include || bugtraq,18477
+100000591 || COMMUNITY WEB-PHP Indexu editor_delete.php remote file include || bugtraq,18477
+100000592 || COMMUNITY WEB-PHP Indexu editor_validate.php remote file include || bugtraq,18477
+100000593 || COMMUNITY WEB-PHP Indexu head.php remote file include || bugtraq,18477
+100000594 || COMMUNITY WEB-PHP Indexu index.php remote file include || bugtraq,18477
+100000595 || COMMUNITY WEB-PHP Indexu inv_config.php remote file include || bugtraq,18477
+100000596 || COMMUNITY WEB-PHP Indexu inv_config_payment.php remote file include || bugtraq,18477
+100000597 || COMMUNITY WEB-PHP Indexu inv_create.php remote file include || bugtraq,18477
+100000598 || COMMUNITY WEB-PHP Indexu inv_delete.php remote file include || bugtraq,18477
+100000599 || COMMUNITY WEB-PHP Indexu inv_edit.php remote file include || bugtraq,18477
+100000600 || COMMUNITY WEB-PHP Indexu inv_markpaid.php remote file include || bugtraq,18477
+100000601 || COMMUNITY WEB-PHP Indexu inv_markunpaid.php remote file include || bugtraq,18477
+100000602 || COMMUNITY WEB-PHP Indexu inv_overdue.php remote file include || bugtraq,18477
+100000603 || COMMUNITY WEB-PHP Indexu inv_paid.php remote file include || bugtraq,18477
+100000604 || COMMUNITY WEB-PHP Indexu inv_send.php remote file include || bugtraq,18477
+100000605 || COMMUNITY WEB-PHP Indexu inv_unpaid.php remote file include || bugtraq,18477
+100000606 || COMMUNITY WEB-PHP Indexu lang_modify.php remote file include || bugtraq,18477
+100000607 || COMMUNITY WEB-PHP Indexu link_add.php remote file include || bugtraq,18477
+100000608 || COMMUNITY WEB-PHP Indexu link_bad.php remote file include || bugtraq,18477
+100000609 || COMMUNITY WEB-PHP Indexu link_bad_delete.php remote file include || bugtraq,18477
+100000610 || COMMUNITY WEB-PHP Indexu link_checkurl.php remote file include || bugtraq,18477
+100000611 || COMMUNITY WEB-PHP Indexu link_delete.php remote file include || bugtraq,18477
+100000612 || COMMUNITY WEB-PHP Indexu link_duplicate.php remote file include || bugtraq,18477
+100000613 || COMMUNITY WEB-PHP Indexu link_edit.php remote file include || bugtraq,18477
+100000614 || COMMUNITY WEB-PHP Indexu link_premium_listing.php remote file include || bugtraq,18477
+100000615 || COMMUNITY WEB-PHP Indexu link_premium_sponsored.php remote file include || bugtraq,18477
+100000616 || COMMUNITY WEB-PHP Indexu link_search.php remote file include || bugtraq,18477
+100000617 || COMMUNITY WEB-PHP Indexu link_sponsored_listing.php remote file include || bugtraq,18477
+100000618 || COMMUNITY WEB-PHP Indexu link_validate.php remote file include || bugtraq,18477
+100000619 || COMMUNITY WEB-PHP Indexu link_validate_edit.php remote file include || bugtraq,18477
+100000620 || COMMUNITY WEB-PHP Indexu link_view.php remote file include || bugtraq,18477
+100000621 || COMMUNITY WEB-PHP Indexu log_search.php remote file include || bugtraq,18477
+100000622 || COMMUNITY WEB-PHP Indexu mail_modify.php remote file include || bugtraq,18477
+100000623 || COMMUNITY WEB-PHP Indexu menu.php remote file include || bugtraq,18477
+100000624 || COMMUNITY WEB-PHP Indexu message_create.php remote file include || bugtraq,18477
+100000625 || COMMUNITY WEB-PHP Indexu message_delete.php remote file include || bugtraq,18477
+100000626 || COMMUNITY WEB-PHP Indexu message_edit.php remote file include || bugtraq,18477
+100000627 || COMMUNITY WEB-PHP Indexu message_send.php remote file include || bugtraq,18477
+100000628 || COMMUNITY WEB-PHP Indexu message_subscriber.php remote file include || bugtraq,18477
+100000629 || COMMUNITY WEB-PHP Indexu message_view.php remote file include || bugtraq,18477
+100000630 || COMMUNITY WEB-PHP Indexu review_validate.php remote file include || bugtraq,18477
+100000631 || COMMUNITY WEB-PHP Indexu review_validate_edit.php remote file include || bugtraq,18477
+100000632 || COMMUNITY WEB-PHP Indexu summary.php remote file include || bugtraq,18477
+100000633 || COMMUNITY WEB-PHP Indexu template_active.php remote file include || bugtraq,18477
+100000634 || COMMUNITY WEB-PHP Indexu template_add_custom.php remote file include || bugtraq,18477
+100000635 || COMMUNITY WEB-PHP Indexu template_delete.php remote file include || bugtraq,18477
+100000636 || COMMUNITY WEB-PHP Indexu template_delete_file.php remote file include || bugtraq,18477
+100000637 || COMMUNITY WEB-PHP Indexu template_duplicate.php remote file include || bugtraq,18477
+100000638 || COMMUNITY WEB-PHP Indexu template_export.php remote file include || bugtraq,18477
+100000639 || COMMUNITY WEB-PHP Indexu template_import.php remote file include || bugtraq,18477
+100000640 || COMMUNITY WEB-PHP Indexu template_manager.php remote file include || bugtraq,18477
+100000641 || COMMUNITY WEB-PHP Indexu template_modify.php remote file include || bugtraq,18477
+100000642 || COMMUNITY WEB-PHP Indexu template_modify_file.php remote file include || bugtraq,18477
+100000643 || COMMUNITY WEB-PHP Indexu template_rename.php remote file include || bugtraq,18477
+100000644 || COMMUNITY WEB-PHP Indexu user_add.php remote file include || bugtraq,18477
+100000645 || COMMUNITY WEB-PHP Indexu user_delete.php remote file include || bugtraq,18477
+100000646 || COMMUNITY WEB-PHP Indexu user_edit.php remote file include || bugtraq,18477
+100000647 || COMMUNITY WEB-PHP Indexu user_search.php remote file include || bugtraq,18477
+100000648 || COMMUNITY WEB-PHP Indexu whos.php remote file include || bugtraq,18477
+100000649 || COMMUNITY WEB-PHP MyPHP Guestbook index.php xss attempt || bugtraq,18582
+100000650 || COMMUNITY WEB-PHP MyPHP Guestbook index.php xss attempt || bugtraq,18582
+100000651 || COMMUNITY WEB-PHP MyPHP Guestbook index.php xss attempt || bugtraq,18582
+100000652 || COMMUNITY WEB-PHP MyPHP Guestbook index.php xss attempt || bugtraq,18582
+100000653 || COMMUNITY WEB-PHP MyPHP Guestbook index.php xss attempt || bugtraq,18582
+100000654 || COMMUNITY WEB-PHP MyPHP Guestbook index.php xss attempt || bugtraq,18582
+100000655 || COMMUNITY WEB-PHP MyPHP Guestbook guestbook.php xss attempt || bugtraq,18582
+100000656 || COMMUNITY WEB-PHP MyPHP Guestbook guestbook.php xss attempt || bugtraq,18582
+100000657 || COMMUNITY WEB-PHP MyPHP Guestbook guestbook.php xss attempt || bugtraq,18582
+100000658 || COMMUNITY WEB-PHP MyPHP Guestbook guestbook.php xss attempt || bugtraq,18582
+100000659 || COMMUNITY WEB-PHP MyPHP Guestbook guestbook.php xss attempt || bugtraq,18582
+100000660 || COMMUNITY WEB-PHP MyPHP Guestbook guestbook.php xss attempt || bugtraq,18582
+100000661 || COMMUNITY WEB-PHP MyPHP Guestbook edit.php xss attempt || bugtraq,18582
+100000662 || COMMUNITY WEB-PHP MyPHP Guestbook edit.php xss attempt || bugtraq,18582
+100000663 || COMMUNITY WEB-PHP MyPHP Guestbook edit.php xss attempt || bugtraq,18582
+100000664 || COMMUNITY WEB-PHP MyPHP Guestbook edit.php xss attempt || bugtraq,18582
+100000665 || COMMUNITY WEB-PHP MyPHP Guestbook edit.php xss attempt || bugtraq,18582
+100000666 || COMMUNITY WEB-PHP Harpia files.php remote file include || bugtraq,18614
+100000667 || COMMUNITY WEB-PHP Harpia files.php remote file include || bugtraq,18614
+100000668 || COMMUNITY WEB-PHP Harpia pheader.php remote file include || bugtraq,18614
+100000669 || COMMUNITY WEB-PHP Harpia headlines.php remote file include || bugtraq,18614
+100000670 || COMMUNITY WEB-PHP Harpia web_statsConfig.php remote file include || bugtraq,18614
+100000671 || COMMUNITY WEB-PHP Harpia preload.php remote file include || bugtraq,18614
+100000672 || COMMUNITY WEB-PHP Harpia users.php remote file include || bugtraq,18614
+100000673 || COMMUNITY WEB-PHP Harpia web_statsConfig.php remote file include || bugtraq,18614
+100000674 || COMMUNITY WEB-PHP Harpia footer.php remote file include || bugtraq,18614
+100000675 || COMMUNITY WEB-PHP Harpia pfooter.php remote file include || bugtraq,18614
+100000676 || COMMUNITY WEB-PHP Harpia missing.php remote file include || bugtraq,18614
+100000677 || COMMUNITY WEB-PHP Harpia topics.php remote file include || bugtraq,18614
+100000678 || COMMUNITY WEB-PHP Harpia header.php remote file include || bugtraq,18614
+100000679 || COMMUNITY WEB-PHP Harpia index.php remote file include || bugtraq,18614
+100000680 || COMMUNITY WEB-PHP Harpia search.php remote file include || bugtraq,18614
+100000681 || COMMUNITY WEB-PHP Harpia header.php remote file include || bugtraq,18614
+100000682 || COMMUNITY WEB-PHP Harpia email.php remote file include || bugtraq,18614
+100000683 || COMMUNITY WEB-PHP cPanel select.html xss attempt || bugtraq,18655
+100000684 || COMMUNITY VIRUS OutBound Dremn Trojan Beacon || url,symantec.com/avcenter/venc/data/trojan.dremn.html
+100000685 || COMMUNITY VIRUS Answering Dremn Trojan Server || url,symantec.com/avcenter/venc/data/trojan.dremn.html
+100000686 || COMMUNITY DOS EnergyMech parse_notice vulnerability - inbound || bugtraq,18664
+100000687 || COMMUNITY DOS EnergyMech parse_notice vulnerability - outbound || bugtraq,18664
+100000688 || COMMUNITY POLICY Ajax Remote Desktop Connection || url,www.peterdamen.com/ajaxrd/
+100000689 || COMMUNITY SMTP Mytob MAIL FROM Attempt || url,www.symantec.com/avcenter/venc/data/w32.mytob@mm.html
+100000690 || COMMUNITY SQL-INJECTION BXCP Sql Injection attempt || bugtraq,18765 || url,www.milw0rm.com/exploits/1975
+100000691 || COMMUNITY SQL-INJECTION Diesel Joke Script Sql Injection attempt || bugtraq,18760
+100000692 || COMMUNITY WEB-CLIENT midi file download attempt || bugtraq,18507
+100000693 || COMMUNITY WEB-CLIENT winamp midi file header overflow attempt || bugtraq,18507
+100000694 || COMMUNITY WEB-MISC VCard PRO gbrowse.php SQL injection attempt || bugtraq,18699
+100000695 || COMMUNITY WEB-MISC VCard PRO rating.php SQL injection attempt || bugtraq,18699
+100000696 || COMMUNITY WEB-MISC VCard PRO create.php SQL injection attempt || bugtraq,18699
+100000697 || COMMUNITY WEB-MISC VCard PRO search.php SQL injection attempt || bugtraq,18699
+100000698 || COMMUNITY WEB-MISC BXCP index.php SQL injection attempt || bugtraq,18765
+100000699 || COMMUNITY WEB-MISC Vincent Leclercq News diver.php xss attempt || bugtraq,18775
+100000700 || COMMUNITY WEB-MISC Vincent Leclercq News diver.php xss attempt || bugtraq,18775
+100000701 || COMMUNITY WEB-MISC WordPress index.php SQL injection attempt || bugtraq,18779
+100000702 || COMMUNITY WEB-MISC Webvizyon SayfalaAltList.asp MSSQL injection attempt || bugtraq,18899
+100000703 || COMMUNITY WEB-PHP Horde index.php show XSS attempt || bugtraq,18845
+100000704 || COMMUNITY WEB-PHP SmartSiteCMS comment.php remote file include || bugtraq,18697
+100000705 || COMMUNITY WEB-PHP SmartSiteCMS test.php remote file include || bugtraq,18697
+100000706 || COMMUNITY WEB-PHP SmartSiteCMS index.php remote file include || bugtraq,18697
+100000707 || COMMUNITY WEB-PHP SmartSiteCMS inc_adminfoot.php remote file include || bugtraq,18697
+100000708 || COMMUNITY WEB-PHP SmartSiteCMS comedit.php remote file include || bugtraq,18697
+100000709 || COMMUNITY WEB-PHP SquirrelMail search.php xss attempt || bugtraq,18700
+100000710 || COMMUNITY WEB-PHP Xoops MyAds Module annonces-p-f.php SQL injection attempt || bugtraq,18718
+100000711 || COMMUNITY WEB-PHP PHPRaid raids.php remote file include || bugtraq,18719
+100000712 || COMMUNITY WEB-PHP PHPRaid register.php remote file include || bugtraq,18719
+100000713 || COMMUNITY WEB-PHP PHPRaid roster.php remote file include || bugtraq,18719
+100000714 || COMMUNITY WEB-PHP PHPRaid view.php remote file include || bugtraq,18719
+100000715 || COMMUNITY WEB-PHP PHPRaid logs.php remote file include || bugtraq,18719
+100000716 || COMMUNITY WEB-PHP PHPRaid users.php remote file include || bugtraq,18719
+100000717 || COMMUNITY WEB-PHP PHPRaid configuration.php remote file include || bugtraq,18719
+100000718 || COMMUNITY WEB-PHP PHPRaid guilds.php remote file include || bugtraq,18719
+100000719 || COMMUNITY WEB-PHP PHPRaid index.php remote file include || bugtraq,18719
+100000720 || COMMUNITY WEB-PHP PHPRaid locations.php remote file include || bugtraq,18719
+100000721 || COMMUNITY WEB-PHP PHPRaid login.php remote file include || bugtraq,18719
+100000722 || COMMUNITY WEB-PHP PHPRaid lua_output.php remote file include || bugtraq,18719
+100000723 || COMMUNITY WEB-PHP PHPRaid permissions.php remote file include || bugtraq,18719
+100000724 || COMMUNITY WEB-PHP PHPRaid profile.php remote file include || bugtraq,18719
+100000725 || COMMUNITY WEB-PHP PHPRaid view.php SQL injection attempt || bugtraq,18720
+100000726 || COMMUNITY WEB-PHP Vincent-Leclercq News diver.php SQL injection attempt || bugtraq,18729
+100000727 || COMMUNITY WEB-PHP Softbiz Banner Exchange insertmember.php xss attempt || bugtraq,18735
+100000728 || COMMUNITY WEB-PHP Geeklog functions.inc remote file include || bugtraq,18740
+100000729 || COMMUNITY WEB-PHP Geeklog functions.inc remote file include || bugtraq,18740
+100000730 || COMMUNITY WEB-PHP Geeklog BlackList.Examine.class.php remote file include || bugtraq,18740
+100000731 || COMMUNITY WEB-PHP Geeklog DeleteComment.Action.class.php remote file include || bugtraq,18740
+100000732 || COMMUNITY WEB-PHP Geeklog EditIPofURL.Admin.class.php remote file include || bugtraq,18740
+100000733 || COMMUNITY WEB-PHP Geeklog MTBlackList.Examine.class.php remote file include || bugtraq,18740
+100000734 || COMMUNITY WEB-PHP Geeklog MassDelete.Admin.class.php remote file include || bugtraq,18740
+100000735 || COMMUNITY WEB-PHP Geeklog MailAdmin.Action.class.php remote file include || bugtraq,18740
+100000736 || COMMUNITY WEB-PHP Geeklog MassDelTrackback.Admin.class.php remote file include || bugtraq,18740
+100000737 || COMMUNITY WEB-PHP Geeklog EditHeader.Admin.class.php remote file include || bugtraq,18740
+100000738 || COMMUNITY WEB-PHP Geeklog EditIP.Admin.class.php remote file include || bugtraq,18740
+100000739 || COMMUNITY WEB-PHP Geeklog IPofUrl.Examine.class.php remote file include || bugtraq,18740
+100000740 || COMMUNITY WEB-PHP Geeklog Import.Admin.class.php remote file include || bugtraq,18740
+100000741 || COMMUNITY WEB-PHP Geeklog LogView.Admin.class.php remote file include || bugtraq,18740
+100000742 || COMMUNITY WEB-PHP Geeklog functions.inc remote file include || bugtraq,18740
+100000743 || COMMUNITY WEB-PHP Plume CMS dbinstall.php remote file include || bugtraq,18750
+100000744 || COMMUNITY WEB-PHP MyNewsGroups tree.php SQL injection attempt || bugtraq,18757
+100000745 || COMMUNITY WEB-PHP Diesel Joke Site category.php SQL injection attempt || bugtraq,18760
+100000746 || COMMUNITY WEB-PHP Randshop header.inc.php remote file include || bugtraq,18763
+100000747 || COMMUNITY WEB-PHP Plume CMS index.php remote file include || bugtraq,18780
+100000748 || COMMUNITY WEB-PHP Plume CMS rss.php remote file include || bugtraq,18780
+100000749 || COMMUNITY WEB-PHP Plume CMS search.php remote file include || bugtraq,18780
+100000750 || COMMUNITY WEB-PHP Free QBoard index.php remote file include || bugtraq,18788
+100000751 || COMMUNITY WEB-PHP Free QBoard about.php remote file include || bugtraq,18788
+100000752 || COMMUNITY WEB-PHP Free QBoard contact.php remote file include || bugtraq,18788
+100000753 || COMMUNITY WEB-PHP Free QBoard delete.php remote file include || bugtraq,18788
+100000754 || COMMUNITY WEB-PHP Free QBoard faq.php remote file include || bugtraq,18788
+100000755 || COMMUNITY WEB-PHP Free QBoard features.php remote file include || bugtraq,18788
+100000756 || COMMUNITY WEB-PHP Free QBoard history.php remote file include || bugtraq,18788
+100000757 || COMMUNITY WEB-PHP QTO File Manager qtofm.php xss attempt || bugtraq,18791
+100000758 || COMMUNITY WEB-PHP QTO File Manager qtofm.php xss attempt || bugtraq,18791
+100000759 || COMMUNITY WEB-PHP QTO File Manager qtofm.php xss attempt || bugtraq,18791
+100000760 || COMMUNITY WEB-PHP The Banner Engine top.php xss attempt || bugtraq,18793
+100000761 || COMMUNITY WEB-PHP PHPWebGallery comments.php xss attempt || bugtraq,18798
+100000762 || COMMUNITY WEB-PHP Randshop index.php remote file include || bugtraq,18809
+100000763 || COMMUNITY WEB-PHP Kamikaze-QSCM config.inc access || bugtraq,18816
+100000764 || COMMUNITY WEB-PHP MyPHP CMS global_header.php remote file include || bugtraq,18834
+100000765 || COMMUNITY WEB-PHP LifeType index.php SQL injection attempt || bugtraq,18835
+100000766 || COMMUNITY WEB-PHP Blog CMS thumb.php remote file include || bugtraq,18837
+100000767 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000768 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000769 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000770 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000771 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000772 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000773 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000774 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000775 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000776 || COMMUNITY WEB-PHP Blog CMS index.php SQL injection attempt || bugtraq,18839
+100000777 || COMMUNITY WEB-PHP Blog CMS action.php SQL injection attempt || bugtraq,18839
+100000778 || COMMUNITY WEB-PHP PHPMailList maillist.php xss attempt || bugtraq,18840
+100000779 || COMMUNITY WEB-PHP Horde index.php xss attempt || bugtraq,18845
+100000780 || COMMUNITY WEB-PHP Horde problem.php xss attempt || bugtraq,18845
+100000781 || COMMUNITY WEB-PHP Horde go.php xss attempt || bugtraq,18845
+100000782 || COMMUNITY WEB-PHP Horde go.php xss attempt || bugtraq,18845
+100000783 || COMMUNITY WEB-PHP ATutor create_course.php xss attempt || bugtraq,18857
+100000784 || COMMUNITY WEB-PHP ATutor create_course.php xss attempt || bugtraq,18857
+100000785 || COMMUNITY WEB-PHP ATutor password_reminder.php xss attempt || bugtraq,18857
+100000786 || COMMUNITY WEB-PHP ATutor browse.php xss attempt || bugtraq,18857
+100000787 || COMMUNITY WEB-PHP ATutor fix_content.php xss attempt || bugtraq,18857
+100000788 || COMMUNITY WEB-PHP FreeWebshop search.php xss attempt || bugtraq,18878
+100000789 || COMMUNITY WEB-PHP FreeWebshop details.php SQL injection attempt || bugtraq,18878
+100000790 || COMMUNITY WEB-PHP Pivot edit_new.php remote file include || bugtraq,18881
+100000791 || COMMUNITY WEB-PHP Pivot pv_core.php access || bugtraq,18881
+100000792 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000793 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000794 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000795 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000796 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000797 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000798 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000799 || COMMUNITY WEB-PHP Pivot blogroll.php xss attempt || bugtraq,18881
+100000800 || COMMUNITY WEB-PHP Pivot editor_menu.php xss attempt || bugtraq,18881
+100000801 || COMMUNITY WEB-PHP Pivot editor_menu.php xss attempt || bugtraq,18881
+100000802 || COMMUNITY WEB-PHP BosClassifieds index.php remote file include || bugtraq,18883
+100000803 || COMMUNITY WEB-PHP BosClassifieds recent.php remote file include || bugtraq,18883
+100000804 || COMMUNITY WEB-PHP BosClassifieds account.php remote file include || bugtraq,18883
+100000805 || COMMUNITY WEB-PHP BosClassifieds classified.php remote file include || bugtraq,18883
+100000806 || COMMUNITY WEB-PHP BosClassifieds search.php remote file include || bugtraq,18883
+100000807 || COMMUNITY WEB-PHP CommonSense search.php SQL injection attempt || bugtraq,18893
+100000808 || COMMUNITY WEB-PHP AjaxPortal ajaxp.php SQL injection attempt || bugtraq,18897
+100000809 || COMMUNITY WEB-PHP RW Download stats.php remote file include || bugtraq,18901
+100000810 || COMMUNITY WEB-PHP PHPBB download.php remote file include || bugtraq,18914
+100000811 || COMMUNITY WEB-PHP PHPBB attach_rules.php remote file include || bugtraq,18914
+100000812 || COMMUNITY WEB-PHP SimpleBoard SBP index.php remote file include || bugtraq,18917
+100000813 || COMMUNITY WEB-PHP SimpleBoard SBP file_upload.php remote file include || bugtraq,18917
+100000814 || COMMUNITY WEB-PHP SimpleBoard SBP image_upload.php remote file include || bugtraq,18917
+100000815 || COMMUNITY WEB-PHP SimpleBoard SBP performs.php remote file include || bugtraq,18917
+100000816 || COMMUNITY WEB-PHP PC_CookBook pccookbook.php remote file include || bugtraq,18919
+100000817 || COMMUNITY WEB-PHP SMF Forum smf.php remote file include || bugtraq,18924
+100000818 || COMMUNITY WEB-PHP Graffiti Forums topics.php SQL injection attempt || bugtraq,18928
+100000819 || COMMUNITY DELETED PhpWebGallery XSS attempt
+100000820 || COMMUNITY WEB-PHP SaPHPLesson add.php SQL injection attempt || bugtraq,18934
+100000821 || COMMUNITY WEB-PHP VBZooM sub-join.php SQL injection attempt || bugtraq,18937
+100000822 || COMMUNITY WEB-PHP VBZooM reply.php SQL injection attempt || bugtraq,18937
+100000823 || COMMUNITY WEB-PHP VBZooM ignore-pm.php SQL injection attempt || bugtraq,18937
+100000824 || COMMUNITY WEB-PHP VBZooM sendmail.php SQL injection attempt || bugtraq,18937
+100000825 || COMMUNITY WEB-PHP Phorum posting.php xss attempt || bugtraq,18941
+100000826 || COMMUNITY WEB-PHP Phorum search.php SQL injection attempt || bugtraq,18941
+100000827 || COMMUNITY WEB-PHP HiveMail address.view.php xss attempt || bugtraq,18949
+100000828 || COMMUNITY WEB-PHP HiveMail address.view.php xss attempt || bugtraq,18949
+100000829 || COMMUNITY WEB-PHP HiveMail address.view.php xss attempt || bugtraq,18949
+100000830 || COMMUNITY WEB-PHP HiveMail index.php xss attempt || bugtraq,18949
+100000831 || COMMUNITY WEB-PHP HiveMail compose.email.php xss attempt || bugtraq,18949
+100000832 || COMMUNITY WEB-PHP HiveMail read.markas.php xss attempt || bugtraq,18949
+100000833 || COMMUNITY WEB-PHP HiveMail search.results.php SQL injection attempt || bugtraq,18949
+100000834 || COMMUNITY WEB-PHP Lazarus codes-english.php xss attempt || bugtraq,18956
+100000835 || COMMUNITY WEB-PHP Lazarus picture.php xss attempt || bugtraq,18956
+100000836 || COMMUNITY WEB-PHP MiniBB com_minibb.php remote file include || bugtraq,18998
+100000837 || COMMUNITY WEB-PHP MiniBB index.php remote file include || bugtraq,18998
+100000838 || COMMUNITY WEB-PHP PhotoCycle photocycle.php xss attempt || bugtraq,18964
+100000839 || COMMUNITY WEB-PHP PHP Event Calendar calendar.php remote file include || bugtraq,18965
+100000840 || COMMUNITY WEB-PHP FlatNuke index.php remote file include || bugtraq,18966
+100000841 || COMMUNITY WEB-PHP PerForms performs.php remote file include || bugtraq,18968
+100000842 || COMMUNITY WEB-PHP PHPBB 3 memberlist.php SQL injection attempt || bugtraq,18969
+100000843 || COMMUNITY WEB-PHP Koobi Pro index.php xss attempt || bugtraq,18970
+100000844 || COMMUNITY WEB-PHP Koobi Pro index.php SQL injection attempt || bugtraq,18970
+100000845 || COMMUNITY WEB-PHP Invision Power Board ipsclass.php SQL injection attempt || bugtraq,18984
+100000846 || COMMUNITY WEB-PHP Subberz Lite user-func.php remote file include || bugtraq,18990
+100000847 || COMMUNITY WEB-PHP Sitemap sitemap.xml.php remote file include || bugtraq,18991
+100000848 || COMMUNITY DELETED PhpWebGallery XSS attempt || bugtraq,18798
+100000849 || COMMUNITY WEB-PHP IceWarp include.php remote file include || bugtraq,19007
+100000850 || COMMUNITY WEB-PHP IceWarp include.php remote file include || bugtraq,19007
+100000851 || COMMUNITY WEB-PHP IceWarp include.php remote file include || bugtraq,19007
+100000852 || COMMUNITY WEB-PHP IceWarp include.php remote file include || bugtraq,19007
+100000853 || COMMUNITY WEB-PHP IceWarp settings.html remote file include || bugtraq,19007
+100000854 || COMMUNITY WEB-PHP ListMessenger listmessenger.php remote file include || bugtraq,19014
+100000855 || COMMUNITY WEB-PHP Professional Home Page Tools class.php SQL injection attempt || bugtraq,19019
+100000856 || COMMUNITY WEB-PHP Professional Home Page Tools class.php SQL injection attempt || bugtraq,19019
+100000857 || COMMUNITY WEB-PHP Professional Home Page Tools class.php SQL injection attempt || bugtraq,19019
+100000858 || COMMUNITY WEB-PHP Professional Home Page Tools class.php SQL injection attempt || bugtraq,19019
+100000859 || COMMUNITY WEB-PHP Professional Home Page Tools class.php SQL injection attempt || bugtraq,19019
+100000860 || COMMUNITY WEB-PHP Francisco Charrua Photo-Gallery room.php SQL injection attempt || bugtraq,19020
+100000861 || COMMUNITY WEB-PHP FlushCMS class.rich.php remote file include || bugtraq,19023
+100000862 || COMMUNITY WEB-PHP FlushCMS class.rich.php remote file include || bugtraq,19023
+100000863 || COMMUNITY WEB-PHP PHPMyRing view_com.php SQL injection attempt || url,secunia.com/advisories/21451/
+100000864 || COMMUNITY WEB-CLIENT tsuserex.dll COM Object Instantiation Vulnerability || url,www.xsec.org/index.php?module=Releases&act=view&type=1&id=14
+100000865 || COMMUNITY WEB-PHP powergap remote file Inclusion Exploit s01 || url,www.powergap-shop.de || url,msgs.securepoint.com/cgi-bin/get/bugtraq0608/301.html
+100000866 || COMMUNITY WEB-PHP powergap remote file Inclusion Exploit s02 || url,www.powergap-shop.de || url,msgs.securepoint.com/cgi-bin/get/bugtraq0608/301.html
+100000867 || COMMUNITY WEB-PHP powergap remote file Inclusion Exploit s03 || url,www.powergap-shop.de || url,msgs.securepoint.com/cgi-bin/get/bugtraq0608/301.html
+100000868 || COMMUNITY WEB-PHP powergap remote file Inclusion Exploit s04 || url,www.powergap-shop.de || url,msgs.securepoint.com/cgi-bin/get/bugtraq0608/301.html
+100000869 || COMMUNITY WEB-PHP powergap remote file Inclusion Exploit sid variant || url,www.powergap-shop.de || url,msgs.securepoint.com/cgi-bin/get/bugtraq0608/301.html
+100000870 || COMMUNITY WEB-PHP powergap remote file inclusion exploit sid variant 2 || url,www.powergap-shop.de || url,msgs.securepoint.com/cgi-bin/get/bugtraq0608/301.html
+100000871 || COMMUNITY WEB-PHP CubeCart XSS attack || url,retrogod.altervista.org/cubecart_3011_adv.html
+100000872 || COMMUNITY WEB-PHP CubeCart XSS attack || url,retrogod.altervista.org/cubecart_3011_adv.html
+100000873 || COMMUNITY WEB-PHP discloser 0.0.4 Remote File Inclusion
+100000874 || COMMUNITY MISC DLR-TOR Directory server response || url,tor.eff.org
+100000875 || COMMUNITY MISC DLR-TOR Client Traffic || url,tor.eff.org
+100000876 || COMMUNITY MISC Google Talk Version Check
+100000877 || COMMUNITY MISC Google Talk Startup
+100000878 || COMMUNITY WEB-CGI Roller Weblog XSS exploit || bugtraq,20045
+100000879 || COMMUNITY WEB-CGI Roller Weblog XSS exploit || bugtraq,20045
+100000880 || COMMUNITY WEB-CGI Roller Weblog XSS exploit || bugtraq,20045
+100000881 || COMMUNITY WEB-CLIENT ImageMagick SGI ZSIZE Header Information Overflow Attempt || bugtraq,19507 || cve,2006-4144
+100000882 || COMMUNITY WEB-PHP PHP Live Helper globals.php remote file include || bugtraq,19349
+100000883 || COMMUNITY WEB-PHP Inlink remote file inclusion exploit || url,milw0rm.com/exploits/2295
+100000884 || COMMUNITY WEB-MISC SimpleBlog Remote SQL Injection attempt || url,milw0rm.com/exploits/2296
+100000885 || COMMUNITY WEB-PHP pHNews access attempt || url,milw0rm.com/exploits/2298
+100000886 || COMMUNITY WEB-PHP Proxima access attempt || url,milw0rm.com/exploits/2299
+100000887 || COMMUNITY WEB-PHP pmwiki exploit attempt || url,milw0rm.com/exploits/2291
+100000888 || COMMUNITY WEB-PHP tikiwiki exploit attempt || url,milw0rm.com/exploits/2288
+100000889 || COMMUNITY WEB-PHP yappa-ng exploit attempt || url,milw0rm.com/exploits/2292
+100000890 || COMMUNITY WEB-MISC Webmin null char attempt || bugtraq,19820 || nessus,22300
+100000891 || COMMUNITY WEB-MISC Usermin null char attempt || bugtraq,19820 || nessus,22300
+100000892 || COMMUNITY MISC Q.931 Invalid Call Reference Length Buffer Overflow || url,www.ethereal.com/news/item_20050504_01.html || url,www.elook.org/internet/126.html
+100000893 || COMMUNITY POLICY Weather Channel Desktop App Installer
+100000894 || COMMUNITY POLICY Weather Channel Desktop App
+100000895 || COMMUNITY WEB-MISC Blojsom Weblog blog-category-description xss attempt || url,www.kb.cert.org/vuls/id/425861
+100000896 || COMMUNITY WEB-MISC Blojsom Weblog blog-entry-title xss attempt || url,www.kb.cert.org/vuls/id/425861
+100000897 || COMMUNITY WEB-MISC Blojsom Weblog rss-enclosure-url xss attempt || url,www.kb.cert.org/vuls/id/425861
+100000898 || COMMUNITY WEB-MISC Blojsom Weblog technorati-tags xss attempt || url,www.kb.cert.org/vuls/id/425861
+100000899 || COMMUNITY WEB-MISC Blojsom Weblog blog-category-name xss attempt || url,www.kb.cert.org/vuls/id/425861
+100000900 || COMMUNITY BOT Mytob IRC DCC file transfer request || url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99
+100000901 || COMMUNITY BOT Mytob IRC DCC chat request || url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99
+100000902 || COMMUNITY BOT Mytob IRC channel join || url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99
+100000903 || COMMUNITY BOT Mytob IRC dns request || url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99
+100000904 || COMMUNITY BOT Mytob IRC dns response || url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99
+100000905 || COMMUNITY BOT Mytob IRC nick change || url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99
+100000906 || COMMUNITY WEB-PHP UBB.threads remote file include
+100000907 || COMMUNITY WEB-PHP phpMyWebmin change_preferences2 script remote file include || url,www.securityfocus.com/bid/20281/info
+100000908 || COMMUNITY WEB-PHP phpMyWebmin create_file script remote file include || url,www.securityfocus.com/bid/20281/info
+100000909 || COMMUNITY WEB-PHP phpMyWebmin upload_local script remote file include || url,www.securityfocus.com/bid/20281/info
+100000910 || COMMUNITY WEB-PHP phpMyWebmin upload_multi script remote file include || url,www.securityfocus.com/bid/20281/info
+100000911 || COMMUNITY WEB-PHP Dayfox Blog adminlog.php module remote file include || url,www.securityfocus.com/archive/1/447500/30/0/threaded
+100000912 || COMMUNITY WEB-PHP Dayfox Blog postblog.php module remote file include || url,www.securityfocus.com/archive/1/447500/30/0/threaded
+100000913 || COMMUNITY WEB-PHP Dayfox Blog index.php module remote file include || url,www.securityfocus.com/archive/1/447500/30/0/threaded
+100000914 || COMMUNITY WEB-PHP Dayfox Blog index2.php module remote file include || url,www.securityfocus.com/archive/1/447500/30/0/threaded
+100000915 || COMMUNITY WEB-PHP Somery Include.php remote file include || bugtraq,19912
+100000916 || COMMUNITY WEB-PHP MyBulletinBoard Functions_Post.php xss attempt || bugtraq,19770
+100000917 || COMMUNITY WEB-PHP PHP-Dimension functions_kb.php remote file include attempt || bugtraq,20367
+100000918 || COMMUNITY WEB-PHP PHP-Dimension themen_portal_mitte.php remote include attempt || bugtraq,20367
+100000919 || COMMUNITY WEB-PHP Segue CMS themesettings.inc.php remote file include attempt || bugtraq,20640 || cve,2006-5497 || url,osvdb.org/29904 || nessus,22922 || url,www.milw0rm.com/exploits/2600
+100000920 || COMMUNITY WEB-PHP MiniBB bb_func_txt.php pathToFiles variable remote file include || bugtraq,20757 || url,osvdb.org/29971 || nessus,22926
+100000921 || COMMUNITY WEB-PHP PunBB register.php language variable remote file include || bugtraq,20786 || cve,2006-5735 || url,osvdb.org/30132 || nessus,22932
+100000922 || COMMUNITY WEB-PHP Etomite CMS index.php id variable SQL injection || bugtraq,21135 || url,osvdb.org/30442 || url,secunia.com/advisories/22885
+100000923 || COMMUNITY DOS Single-Byte UDP Flood
+100000924 || COMMUNITY POLICY Google SafeSearch off
+100000925 || COMMUNITY-WEB-PHP ADP Forum Attempted Password Recon || url,www.milw0rm.com/exploits/3053
+100000926 || COMMUNITY-WEB-PHP EasyNews PRO News Attempted Password Recon || url,www.milw0rm.com/exploits/3039
+100000927 || COMMUNITY MISC Microsoft Messenger phishing attempt - corrupted registry || url,www.microsoft.com/windowsxp/using/security/learnmore/stopspam.mspx
+100000928 || COMMUNITY EXPLOIT LANDesk Management Suite Alerting Service buffer overflow || bugtraq,23483 || cve,2007-1674
+100000929 || COMMUNITY WEB-PHP Xoops module Articles SQL Injection Exploit || url,www.securityfocus.com/archive/1/463916
+100000930 || COMMUNITY WEB-PHP Drake CMS 404.php Local File Include Vulnerability || bugtraq,23215
+100000931 || COMMUNITY WEB-PHP Softerra Time-Assistant remote include attempt || bugtraq,23203
+100000932 || COMMUNITY WEB-PHP Softerra Time-Assistant remote include attempt || bugtraq,23203
+100000933 || COMMUNITY WEB-PHP Aardvark button/settings_sql.php File Include Vulnerability || url,securityfocus.com/archive/1/464351
+100000934 || COMMUNITY WEB-PHP Aardvark button/new_day.php File Include Vulnerability || url,securityfocus.com/archive/1/464351

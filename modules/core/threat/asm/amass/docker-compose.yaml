@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  amass:
+    image: caffix/amass:v3.19.2
+    command: enum -v -src -ip -brute -min-for-recursive 2 -d example.com

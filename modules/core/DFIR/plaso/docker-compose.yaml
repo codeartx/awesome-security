@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  plaso:
+    image: log2timeline/plaso:20220428
+    volumes:
+      - ./volumes/data:/data
+      - ./volumes/data/evidences:/data/evidences
+    command: log2timeline --storage-file /data/evidences.plaso /data/evidences

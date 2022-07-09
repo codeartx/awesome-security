@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  snare:
+    image: huafeihuao0/snare:develop
+    ports:
+    - 8080:80

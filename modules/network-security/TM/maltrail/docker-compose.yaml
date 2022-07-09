@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  maltrail:
+    image: huafeihuao0/maltrail:master
+    ports:
+      - 8337:8337
+      # admin/changeme!
+      - 8338:8338

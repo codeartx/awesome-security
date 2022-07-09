@@ -1,0 +1,11 @@
+# Copyright 2006 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-policy.rules,v 1.5 2007/03/05 14:39:58 akirk Exp $
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY POLICY Ajax Remote Desktop Connection"; flow:from_server,established; content:"<title>"; content:"AJAX Remote Desktop Viewer"; distance:0; reference:url,www.peterdamen.com/ajaxrd/; classtype:policy-violation; sid:100000688; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"COMMUNITY POLICY Weather Channel Desktop App Installer"; flow: established,to_server; uricontent:"/desktopfw"; nocase; uricontent:"/stubinstaller.txt?"; nocase; classtype:policy-violation; sid:100000893; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"COMMUNITY POLICY Weather Channel Desktop App"; flow: established,to_server; uricontent:"/weather/local/"; nocase; content:"Host|3A|"; nocase; content:"desktopfw.weather.com"; nocase; distance:0; pcre:"/^Host\x3A\s+desktopfw\x2Eweather\x2Ecom/smi"; classtype:policy-violation; sid:100000894; rev:1;)
+# alert ip 169.254.0.0/16 any <> any any (msg:"COMMUNITY POLICY Link Local IP addresses traffic seen"; threshold:type limit, track by_src, count 1, seconds 60; classtype:bad-unknown;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"COMMUNITY POLICY Google SafeSearch off"; flow:to_server,established; content:"/images?"; nocase; content:"&safe=off"; nocase; content:"&q="; nocase; classtype:policy-violation; sid:100000924; rev:1;)

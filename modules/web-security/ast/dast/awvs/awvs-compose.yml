@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  # Username:admin@admin.com password:Admin123
+  awvs:
+    image: secfa/docker-awvs:211220100 # https://hub.docker.com/r/secfa/docker-awvs
+    ports:
+      - 3443:3443 # https://localhost:3443/#/login
+
+  # 漏洞靶场，用户名：admin,密码：password
+  web-dvwa:
+    container_name: web-dvwa
+    image: vulnerables/web-dvwa # https://hub.docker.com/r/vulnerables/web-dvwa
+    ports:
+      - 8080:80

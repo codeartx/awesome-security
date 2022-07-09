@@ -1,0 +1,29 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-sip.rules,v 1.5 2006/06/01 15:51:28 akirk Exp $
+
+# Note for Debian users: These rules are out of date and not
+# recommended for production use. They have been commented out
+# for interested users to use as a reference. 
+# Please use at your own risk
+
+#Rules submitted by Jiri Markl
+#Rule for alerting of INVITE flood attack:
+#alert udp any any -> any 5060 (msg:"COMMUNITY SIP INVITE message flooding"; content:"INVITE"; depth:6; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000158; rev:2;)
+#alert tcpp any any -> any 5060 (msg:"COMMUNITY SIP INVITE message flooding"; content:"INVITE"; depth:6; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000158; rev:2;)
+#Rule for alerting of REGISTER flood attack:
+#alert udp any any -> any 5060 (msg:"COMMUNITY SIP REGISTER message flooding"; content:"REGISTER"; depth:8; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000159; rev:2;)
+#alert tcp any any -> any 5060 (msg:"COMMUNITY SIP REGISTER message flooding"; content:"REGISTER"; depth:8; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000159; rev:2;)
+#Rule for alerting common TCP/UDP flood attack:
+#alert udp any any -> any 5060 (msg:"COMMUNITY SIP TCP/IP message flooding directed to SIP proxy"; threshold: type both, track by_src, count 300, seconds 60; classtype:attempted-dos; sid:100000160; rev:2;)
+#alert tcp any any -> any 5060 (msg:"COMMUNITY SIP TCP/IP message flooding directed to SIP proxy"; threshold: type both, track by_src, count 300, seconds 60; classtype:attempted-dos; sid:100000160; rev:2;)
+#Rule for alerting attack using unresolvable DNS names:
+#alert udp $DNS_SERVERS 53 -> any any (msg:"COMMUNITY SIP DNS No such name treshold - Abnormaly high count of No such name responses"; content:"|83|"; offset:3; depth:1; threshold: type both, track by_dst, count 100, seconds 60; classtype:attempted-dos; sid:100000161; rev:2;)
+#Threshold rule for unauthorized responses:
+#alert udp any any -> any 5060 (msg:"COMMUNITY SIP 401 Unauthorized Flood"; content:"SIP/2.0 401 Unauthorized"; depth:24; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000162; rev:2;)
+#alert tcp any any -> any 5060 (msg:"COMMUNITY SIP 401 Unauthorized Flood"; content:"SIP/2.0 401 Unauthorized"; depth:24; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000162; rev:2;)
+#alert udp any any -> any 5060 (msg:"COMMUNITY SIP 407 Proxy Authentication Required Flood"; content:"SIP/2.0 407 Proxy Authentication Required"; depth:42; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000163; rev:2;)
+#alert tcp any any -> any 5060 (msg:"COMMUNITY SIP 407 Proxy Authentication Required Flood"; content:"SIP/2.0 407 Proxy Authentication Required"; depth:42; threshold: type both, track by_src, count 100, seconds 60; classtype:attempted-dos; sid:100000163; rev:2;)
+#Rule submitted by rmkml
+#alert udp $EXTERNAL_NET any -> $HOME_NET 5060 (msg:"COMMUNITY EXPLOIT SIP UDP Softphone overflow attempt"; content:"|3B|branch|3D|"; content:"a|3D|"; pcre:"/^a\x3D[^\n]{1000,}/smi"; reference:bugtraq,16213; reference:cve,2006-0189; classtype:misc-attack; sid:100000223; rev:1;)

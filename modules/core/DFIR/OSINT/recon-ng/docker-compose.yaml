@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  web:
+    image: huafeihuao0/recon-ng:5.1.2
+    container_name: recon-ng
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    command: ./recon-web --host 0.0.0.0
+    ports:
+      - '5100:5000'
+
+  worker:
+    image: huafeihuao0/recon-ng:5.1.2
+    command: rq worker -u redis://redis:6379/0 recon-tasks
+    depends_on:
+      - redis
+      - web
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+
+  redis:
+    image: redis

@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mkcert:
+    image: huafeihuao0/mkcert:v1.4.4
+    volumes:
+      - ./script/gen-local.sh:/opt/mkcert/gen-local.sh
+      - ./keys:/opt/keys
+    entrypoint: /bin/bash ./gen-local.sh
+
+  ran-https:
+    image: m3ng9i/ran
+    depends_on:
+      - mkcert
+    volumes:
+      - ./keys:/keys
+    ports:
+      - 8443:443
+    command: -l -cert /keys/local+1.pem -key /keys/local+1-key.pem

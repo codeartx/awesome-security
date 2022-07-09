@@ -1,0 +1,16 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-dos.rules,v 1.7 2007/02/22 20:44:35 akirk Exp $
+
+#Rule submitted by rmkml
+alert ip $EXTERNAL_NET any -> $HOME_NET any (msg:"COMMUNITY DOS Tcpdump rsvp attack"; ip_proto:46; content:"|00 08 14 01 03 00 00 00|"; reference:cve,2005-1280; reference:cve,2005-1281; reference:bugtraq,13391; classtype:attempted-dos; sid:100000134; rev:1;)
+alert udp $EXTERNAL_NET any -> $HOME_NET 1069 (msg:"COMMUNITY DOS Ethereal slimp overflow attempt"; content:"|6C C3 B2 A1 02 00 04 00 00 00 00 00 00 00 00 00 FF FF 00 00 01 00 00 00 56 57 F7|"; reference:cve,2005-3243; reference:url,www.ethereal.com/docs/release-notes/ethereal-0.10.13.html; classtype:attempted-dos; sid:100000175; rev:1;)
+alert tcp $EXTERNAL_NET any <> $HOME_NET 5005 (msg:"COMMUNITY DOS Trend Micro ServerProtect EarthAgent attempt"; flow:stateless; content:"|21 43 65 87|"; reference:cve,2005-1928; reference:url,www.idefense.com/application/poi/display?id=356&type=vulnerabilities; classtype:attempted-dos; sid:100000215; rev:2;)
+
+#Rules submitted by the Verisign MSS Operations Team
+alert tcp $EXTERNAL_NET any -> $HOME_NET 6667:7000 (msg:"COMMUNITY DOS EnergyMech parse_notice vulnerability - inbound"; flow:to_server,established; content:"NOTICE|20|"; content:!"|5c|"; within:11; reference:bugtraq,18664; classtype:attempted-dos; sid:100000686; rev:2;)
+alert tcp $HOME_NET 6667:7000 -> $EXTERNAL_NET any (msg:"COMMUNITY DOS EnergyMech parse_notice vulnerability - outbound"; flow:to_server,established; content:"NOTICE|20|"; content:!"|5c|"; within:11; reference:bugtraq,18664; classtype:attempted-dos; sid:100000687; rev:2;)
+
+#Rule submitted by Dan Protich
+alert udp $EXTERNAL_NET !53 <> $HOME_NET !53  (msg:"COMMUNITY DOS Single-Byte UDP Flood"; content:"0"; dsize:1; classtype:attempted-dos; threshold: type threshold, track by_dst, count 200, seconds 60; sid:100000923; rev:1;)

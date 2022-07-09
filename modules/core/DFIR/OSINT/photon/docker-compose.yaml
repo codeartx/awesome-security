@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  photon:
+    image: huafeihuao0/photon:1.3.0
+    volumes:
+      - ./volumes2/testphp.vulnweb.com:/Photon/testphp.vulnweb.com
+    command: -u testphp.vulnweb.com

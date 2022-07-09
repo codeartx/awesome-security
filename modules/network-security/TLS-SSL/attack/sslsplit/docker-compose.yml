@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  sslsplit:
+    image: vimagick/sslsplit
+    command:
+      -k keys/ca.key -c keys/ca.crt -P
+      -l logs/connections.log -S logs
+      tcp 0.0.0.0 8080
+      ssl 0.0.0.0 8443
+    network_mode: host
+    volumes:
+      - ./data:/data
+    working_dir: /data

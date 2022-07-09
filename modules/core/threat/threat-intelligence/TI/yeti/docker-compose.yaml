@@ -1,0 +1,70 @@
+version: '3.3'
+
+services:
+  redis:
+    image: redis:latest
+
+  mongodb:
+    image: mongo:4.0.12
+#    environment:
+#      - MONGO_LOG_DIR=/dev/null
+    command: mongod
+
+  #############
+  yeti:
+    image: huafeihuao0/yeti:1.8.5
+    ports:
+      - "5100:5000"
+    command: ['webserver']
+    depends_on:
+      - redis
+      - mongodb
+
+  feeds:
+    image: huafeihuao0/yeti:1.8.5
+    command: ['feeds']
+    depends_on:
+      - redis
+      - mongodb
+      - yeti
+    environment:
+      - TLDEXTRACT_CACHE=/tmp/tldextract.cache
+
+  analytics:
+    image: huafeihuao0/yeti:1.8.5
+    command: ['analytics']
+    depends_on:
+      - redis
+      - mongodb
+      - yeti
+    environment:
+      - TLDEXTRACT_CACHE=/tmp/tldextract.cache
+
+  beat:
+    image: huafeihuao0/yeti:1.8.5
+    command: ['beat']
+    depends_on:
+      - redis
+      - mongodb
+      - yeti
+      - feeds
+      - analytics
+      - exports
+
+  exports:
+    image: huafeihuao0/yeti:1.8.5
+    command: ['exports']
+    depends_on:
+      - redis
+      - mongodb
+      - yeti
+    volumes:
+      - /tmp/docker-yeti-exports:/opt/yeti/exports
+
+  oneshot:
+    image: huafeihuao0/yeti:1.8.5
+    command: ['oneshot']
+    depends_on:
+      - redis
+      - mongodb
+      - yeti

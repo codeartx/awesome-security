@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  nessus:
+    image: tenableofficial/nessus:10.1.0 # https://hub.docker.com/layers/tenableofficial/nessus/10.1.0/images/sha256-2a5eb2197d1746eb22de6cb66fc5f35bb33060da42834d95f286a74c9e1cc881?context=explore
+    environment:
+      - ACTIVATION_CODE=CM4L-PKUE-JGMT-4ZPH-FNZZ
+      - USERNAME=admin
+      - PASSWORD=123456
+    ports:
+      - 8834:8834
+
+  # 漏洞靶场，用户名：admin,密码：password
+  web-dvwa:
+    container_name: web-dvwa
+    image: vulnerables/web-dvwa # https://hub.docker.com/r/vulnerables/web-dvwa
+    ports:
+      - 8080:80

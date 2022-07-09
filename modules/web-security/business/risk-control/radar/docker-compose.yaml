@@ -1,0 +1,50 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:8.0.19
+    hostname: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - "MYSQL_USER=radar"
+      - "MYSQL_PASSWORD=456132"
+      - "MYSQL_ROOT_PASSWORD=456132"
+      - "MYSQL_DATABASE=radar"
+    volumes:
+      - ./asset/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+      - ./asset/sql:/docker-entrypoint-initdb.d
+
+  redis:
+    image: redis:3.2
+    hostname: redis
+
+  mongodb:
+    image: mongo:4.0.13-xenial
+    hostname: mongodb
+
+  elasticsearch:
+    image: elasticsearch:7.17.4
+    hostname: elasticsearch
+    environment:
+      - discovery.type=single-node
+
+  # admin2/123456admin
+  admin:
+    image: huafeihuao0/radar-admin:1.0.8
+    links:
+      - mysql
+      - redis
+      - mongodb
+      - elasticsearch
+    ports:
+      - "6580:6580"
+
+  engine:
+    image: huafeihuao0/radar-engine:1.0.8
+    links:
+      - mysql
+      - redis
+      - mongodb
+      - elasticsearch
+    ports:
+      - "6581:6581"

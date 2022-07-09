@@ -1,0 +1,32 @@
+# Copyright 2001-2005 Sourcefire, Inc. All Rights Reserved
+#
+# This file may contain proprietary rules that were created, tested and
+# certified by Sourcefire, Inc. (the "VRT Certified Rules") as well as
+# rules that were created by Sourcefire and other third parties and
+# distributed under the GNU General Public License (the "GPL Rules").  The
+# VRT Certified Rules contained in this file are the property of
+# Sourcefire, Inc. Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# The GPL Rules created by Sourcefire, Inc. are the property of
+# Sourcefire, Inc. Copyright 2002-2005 Sourcefire, Inc. All Rights
+# Reserved.  All other GPL Rules are owned and copyrighted by their
+# respective owners (please see www.snort.org/contributors for a list of
+# owners and their respective copyrights).  In order to determine what
+# rules are VRT Certified Rules or GPL Rules, please refer to the VRT
+# Certified Rules License Agreement.
+#
+#
+# $Id: info.rules,v 1.27.2.3.2.2 2005/05/31 17:13:02 mwatchinski Exp $
+#-----------
+# INFO RULES
+#-----------
+
+alert tcp $TELNET_SERVERS 23 -> $EXTERNAL_NET any (msg:"INFO TELNET login incorrect"; flow:from_server,established; content:"Login incorrect"; reference:arachnids,127; classtype:bad-unknown; sid:718; rev:9;)
+alert tcp $TELNET_SERVERS 23 -> $EXTERNAL_NET any (msg:"INFO TELNET access"; flow:from_server,established; content:"|FF FD|"; rawbytes; content:"|FF FD|"; distance:0; rawbytes; content:"|FF FD|"; distance:0; rawbytes; reference:arachnids,08; reference:cve,1999-0619; reference:nessus,10280; classtype:not-suspicious; sid:716; rev:13;)
+alert tcp $EXTERNAL_NET 80 -> $HOME_NET any (msg:"INFO Connection Closed MSG from Port 80"; flow:from_server,established; content:"Connection closed by foreign host"; nocase; classtype:unknown; sid:488; rev:4;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 21 (msg:"INFO FTP no password"; flow:from_client,established; content:"PASS"; nocase; pcre:"/^PASS\s*\n/smi"; reference:arachnids,322; classtype:unknown; sid:489; rev:7;)
+alert tcp $EXTERNAL_NET any -> $SMTP_SERVERS 25 (msg:"INFO battle-mail traffic"; flow:to_server,established; content:"BattleMail"; classtype:policy-violation; sid:490; rev:7;)
+alert tcp $HOME_NET 21 -> $EXTERNAL_NET any (msg:"INFO FTP Bad login"; flow:from_server,established; content:"530 "; pcre:"/^530\s+(Login|User)/smi"; classtype:bad-unknown; sid:491; rev:8;)
+alert tcp $TELNET_SERVERS 23 -> $EXTERNAL_NET any (msg:"INFO TELNET login failed"; flow:from_server,established; content:"Login failed"; nocase; classtype:bad-unknown; sid:492; rev:9;)
+alert tcp $HOME_NET 23 -> $EXTERNAL_NET any (msg:"INFO TELNET Bad Login"; flow:from_server,established; content:"Login incorrect"; nocase; classtype:bad-unknown; sid:1251; rev:6;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"INFO psyBNC access"; flow:from_server,established; content:"Welcome!psyBNC@lam3rz.de"; classtype:bad-unknown; sid:493; rev:5;)
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"INFO web bug 0x0 gif attempt"; flow:from_server,established; content:"Content-type|3A| image/gif"; nocase; content:"GIF"; distance:0; nocase; content:"|01 00 01 00|"; within:4; distance:3; content:","; distance:0; content:"|01 00 01 00|"; within:4; distance:4; classtype:misc-activity; sid:2925; rev:3;)

@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  # 用户名：root 密码：（空）
+  cowrie:
+    image: cowrie/cowrie
+    environment:
+      - COWRIE_TELNET_ENABLED=yes
+    ports:
+      - 2222:2222/tcp

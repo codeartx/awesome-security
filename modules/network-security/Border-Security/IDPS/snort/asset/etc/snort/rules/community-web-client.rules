@@ -1,0 +1,25 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-web-client.rules,v 1.21 2006/10/20 13:22:38 akirk Exp $
+
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT Internet Explorer URLMON.DLL Content-Type Overflow Attempt"; flow:to_client,established; content:"Content-Type|3A|"; nocase; pcre:"/Content-Type\x3A[^\r\n]{300,}/i"; classtype:attempted-admin; reference:bugtraq,7419; reference:cve,2003-0113; reference:url,www.microsoft.com/technet/security/bulletin/MS03-015.mspx; sid:100000118; rev:2;)
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT Internet Explorer URLMON.DLL Content-Encoding Overflow Attempt"; flow:to_client,established; content:"Content-Encoding|3A|"; nocase; pcre:"/Content-Encoding\x3A[^\r\n]{300,}/i"; classtype:attempted-admin; reference:bugtraq,7419; reference:cve,2003-0113; reference:url,www.microsoft.com/technet/security/bulletin/MS03-015.mspx; sid:100000119; rev:2;)
+#Rule submitted by Crusoe Researches Team
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT Winamp PlayList buffer overflow attempt"; flow:from_server,established; content:"playlist"; nocase; content:"\\\\"; reference:bugtraq,16410; reference:cve,2006-0476; reference:url,www.frsirt.com/english/advisories/2006/0361; classtype:attempted-admin; sid:100000228; rev:2;)
+
+#alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT IE mulitple event handler heap overflow attempt"; flow:established; content:"on"; nocase; pcre:"/<[^>]*?(on[^>]*?=[\d\w]+\s+){30,}/smi"; reference:bugtraq,17131; reference:cve,2006-1245; reference:url,www.microsoft.com/technet/security/Bulletin/MS06-013.mspx; classtype:attempted-user; sid:100000238; rev:3;)
+#alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT IE createTextRange overflow attempt"; flow:to_client,established; content:".createTextRange"; nocase; classtype:attempted-user; reference:bugtraq,17196; reference:cve,2006-1359; reference:url,www.microsoft.com/technet/security/Bulletin/MS06-013.mspx; sid:100000239; rev:2;)
+
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT RealMedia invalid chunk size heap overflow attempt"; flow:to_client,established; content:"Transfer-Encoding|3a|"; nocase; content:"chunked"; nocase; content:"Content-Type|3a|"; nocase; distance:0; content:"realvideo"; nocase; pcre:"/\r\n[0-9A-Fa-f]{9}/Ri"; reference:bugtraq,17202; reference:cve,2005-2922; reference:url,service.real.com/realplayer/security/03162006_player/en/; classtype:attempted-user; sid:100000284; rev:2;)
+
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT Mozilla Firefox DOMNodeRemoved attack attempt"; flow:to_client,established; content:"document|2e|addEventListener|28 22|DOMNodeRemoved|22|"; nocase; content:"document|2e|body|2e|appendChild|28|document|2e|getElementById|28|"; reference:bugtraq,18228; reference:cve,2006-2779; classtype:attempted-user; sid:100000447; rev:1;)
+
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT midi file download attempt"; flow:to_client,established; content:"Content-Type|3a|"; nocase; content:"audio|2f|midi"; nocase; distance:0; pcre:"/^Content-Type\s*\x3A\s*audio\x2Fmidi/smi"; flowbits:set,midi.download; flowbits:noalert; reference:bugtraq,18507; classtype:misc-activity; sid:100000692; rev:2;)
+
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT winamp midi file header overflow attempt"; flow:to_client,established; flowbits:isset,midi.download; content:"|4d 54 68 64 00 00 00 06 00 00 00 01 00 60 4d 54 72 6b 00 00 00|"; nocase; flowbits:unset,midi.download; reference:bugtraq,18507; classtype:attempted-user; sid:100000693; rev:2;)
+
+# Rule by <urleet@gmail.com>
+alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT tsuserex.dll COM Object Instantiation Vulnerability"; flow:from_server,established; content:"E2E9CAE6-1E7B-4B8E-BABD-E9BF6292AC29"; nocase; reference:url,www.xsec.org/index.php?module=Releases&act=view&type=1&id=14; classtype:attempted-user; sid:100000864; rev:2;)
+
+#alert tcp $EXTERNAL_NET $HTTP_PORTS -> $HOME_NET any (msg:"COMMUNITY WEB-CLIENT ImageMagick SGI ZSIZE Header Information Overflow Attempt"; content:"|01 da|"; byte_test: 2,>,4,9,relative; classtype: attempted-user; reference:bugtraq,19507; reference:cve,2006-4144; sid:100000881; rev:1;)

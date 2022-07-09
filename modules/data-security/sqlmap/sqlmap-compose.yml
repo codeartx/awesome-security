@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  # 漏洞靶场，用户名：admin,密码：password
+  web-dvwa:
+    container_name: web-dvwa
+    image: vulnerables/web-dvwa # https://hub.docker.com/r/vulnerables/web-dvwa
+    ports:
+      - 8080:80
+
+  sqlmap:
+    image: huafeihuao0/sqlmap:1.6
+    depends_on:
+      - web-dvwa
+    volumes:
+      - ./output:/root/.local/share/sqlmap/output
+    entrypoint: sleep 10000

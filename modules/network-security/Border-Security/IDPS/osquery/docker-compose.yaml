@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  # 启动后，进入容器，运行 osqueryi，进入命令行客户端
+  osquery:
+    image: osquery/osquery:5.0.1-ubuntu18.04
+    tty: true

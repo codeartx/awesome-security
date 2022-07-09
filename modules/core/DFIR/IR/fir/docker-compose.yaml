@@ -1,0 +1,73 @@
+version: '3.4'
+
+services:
+  fir:
+    image: huafeihuao0/fir:f992484
+    entrypoint: /bin/sh
+    command: -c "wait-for -t 10 fir_db:3306 && python manage.py migrate && python manage.py loaddata incidents/fixtures/*.json && python manage.py collectstatic --no-input && python manage.py runserver 0.0.0.0:8000"
+    container_name: fir
+    hostname: fir
+    depends_on:
+      - fir_db
+      - fir_redis
+    env_file:
+      - asset/fir.env
+    expose:
+      - 8000
+
+  fir_db:
+    image: mariadb
+    container_name: fir_db
+    hostname: fir_db
+    expose:
+      - 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: fir
+      MYSQL_USER: fir
+      MYSQL_PASSWORD: fir
+
+  fir_redis:
+    image: "redis:alpine"
+    container_name: fir_redis
+    hostname: fir_redis
+    expose:
+      - 6379
+
+  fir_celery_worker:
+    image: huafeihuao0/fir:f992484
+    entrypoint: /bin/sh
+    command: -c "wait-for -t 10 fir_redis:6379 && wait-for -t 30 fir:8000 -- celery -A fir_celery.celeryconf.celery_app worker -l debug"
+    container_name: fir_celery_worker
+    hostname: fir_celery_worker
+    depends_on:
+      - fir
+      - fir_db
+      - fir_redis
+    env_file:
+      - asset/fir.env
+
+  fir_celery_beat:
+    image: huafeihuao0/fir:f992484
+    entrypoint: /bin/sh
+    command: -c "wait-for -t 10 fir_redis:6379 && wait-for -t 30 fir:8000 -- celery -A fir_celery.celeryconf.celery_app beat -l debug"
+    container_name: fir_celery_beat
+    hostname: fir_celery_beat
+    depends_on:
+      - fir
+      - fir_db
+      - fir_redis
+    env_file:
+      - asset/fir.env
+
+  fir_web:
+    image: nginx
+    container_name: fir_web
+    hostname: fir_web
+    depends_on:
+      - fir
+    volumes:
+      - ./asset/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+

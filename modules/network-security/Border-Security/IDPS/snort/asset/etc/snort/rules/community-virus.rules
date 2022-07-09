@@ -1,0 +1,21 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-virus.rules,v 1.15 2006/10/19 20:20:29 akirk Exp $
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 5554 (msg:"COMMUNITY VIRUS Dabber PORT overflow attempt port 5554"; flow:to_server,established,no_stream; content:"PORT"; nocase; isdataat:100,relative; pcre:"/^PORT\s[^\n]{100}/smi"; reference:MCAFEE,125300; classtype:attempted-admin; sid:100000110; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 1023 (msg:"COMMUNITY VIRUS Dabber PORT overflow attempt port 1023"; flow:to_server,established,no_stream; content:"PORT"; nocase; isdataat:100,relative; pcre:"/^PORT\s[^\n]{100}/smi"; reference:MCAFEE,125300; classtype:attempted-admin; sid:100000111; rev:1;)
+alert tcp $HOME_NET any -> 207.172.16.155 80 (msg:"COMMUNITY VIRUS Possible BlackWorm or Nymex infected host"; flow:to_server,established; uricontent:"/cgi-bin/Count.cgi?df=765247"; reference:url,www.microsoft.com/security/encyclopedia/details.aspx?name=Win32%2fMywife.E%40mm; reference:url,cme.mitre.org/data/list.html#24; reference:url,isc.sans.org/blackworm; classtype:trojan-activity; sid:100000226; rev:2;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 8 (msg:"COMMUNITY VIRUS Nugache connect"; flow:to_server,established; content:"|00 02|"; flowbits:set,nugache.connection; flowbits:noalert; classtype:trojan-activity; sid:100000282; rev:2;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 8 (msg:"COMMUNITY VIRUS Nugache data"; flow:to_server,established; flowbits:isset,nugache.connection; dsize:64; reference:url,securityresponse.symantec.com/avcenter/venc/data/w32.nugache.a@mm.html; classtype:trojan-activity; sid:100000283; rev:1;)
+
+# DNS Rules submitted by urleet@gmail.com
+alert udp $HOME_NET any -> $EXTERNAL_NET 53 (msg:"COMMUNITY VIRUS Ginwui.B command server dns query attempt - scfzf.xicp.net"; content:"|01 00|"; offset:2; depth:2; content:"|05|scfzf|04|xicp|03|net";threshold: type limit, track by_src, count 1, seconds 360; reference:url,vil.nai.com/vil/content/v_139545.htm; classtype:trojan-activity; sid:100000310; rev:2;)
+alert udp $HOME_NET any -> $EXTERNAL_NET 53 (msg:"COMMUNITY VIRUS Ginwui.B command server dns query attempt - localhosts.3322.org"; content:"|01 00|"; offset:2; depth:2; content:"|0A|localhosts|04|3322|03|org";threshold: type limit, track by_src, count 1, seconds 360; reference:url,vil.nai.com/vil/content/v_139545.htm; classtype:trojan-activity; sid:100000311; rev:2;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"COMMUNITY VIRUS Ginwui.B POST attempt"; flow:to_server,established; content:"POST|20 2F|"; nocase; depth:6; content:"Host|3a|"; nocase; content:"scfzf.xicp.net"; nocase; pcre:"/Host\x3A[^\n\r]+scfzf.xicp.net/smi"; content:"Content-Length|3a 20|0"; nocase; content:"Connection|3a| Keep-Alive"; nocase; threshold: type limit, track by_src, count 1, seconds 360; reference:url,vil.nai.com/vil/content/v_139545.htm; classtype:trojan-activity; sid:100000312; rev:3;)
+
+
+alert udp !$DNS_SERVERS any -> $EXTERNAL_NET 53 (msg:"COMMUNITY VIRUS OutBound Dremn Trojan Beacon"; content:"|00 00 01|"; offset:3; depth:3; content:"aaaaaaaaaaaaaaaaaaaaa"; within:50; pcre:"/((X|Y)m(A|B)(i)?...a{21})/"; reference:url,symantec.com/avcenter/venc/data/trojan.dremn.html; classtype:trojan-activity; sid:100000684; rev:1;)
+alert udp $EXTERNAL_NET 53 -> !$DNS_SERVERS any (msg: "COMMUNITY VIRUS Answering Dremn Trojan Server"; content:"|80 00 01|"; offset:3; depth:3; content:"aa"; within:50; pcre:"/((X|Y)m(A|B)(i)?...aa)/"; reference:url,symantec.com/avcenter/venc/data/ trojan.dremn.html; classtype:trojan-activity; sid:100000685; rev:1;)
+

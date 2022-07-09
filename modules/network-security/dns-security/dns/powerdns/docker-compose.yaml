@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    hostname: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE=powerdns
+    volumes:
+      - ./conf/db:/docker-entrypoint-initdb.d
+    ports:
+      - 3307:3306
+    command: --default-authentication-plugin=mysql_native_password
+
+  powerdns:
+    image: procube/powerdns:4.6.2
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=12345678
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+    cap_add:
+      - NET_ADMIN

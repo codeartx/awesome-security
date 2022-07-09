@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  # admin:demo
+  grr-server:
+    container_name: grr-server
+    hostname: grr-server
+    image: grrdocker/grr:hotfix-forensic-artifacts-release
+    environment:
+      - EXTERNAL_HOSTNAME=grr-server
+      - ADMIN_PASSWORD=demo
+    ports:
+      - 8000:8000 #  Admin UI
+      - 8080:8080 # client polls
+
+  grr-client:
+    image: huafeihuao0/grr-client:3.4.6.0

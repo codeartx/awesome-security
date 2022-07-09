@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  harvester:
+    image: huafeihuao0/the-harvester:4.0.3
+    entrypoint: python3 theHarvester.py -d testphp.vulnweb.com -l 400 -b google -f ./output.html

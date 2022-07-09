@@ -1,0 +1,6 @@
+# Copyright 2005 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-oracle.rules,v 1.2 2005/10/13 14:16:06 akirk Exp $
+
+alert tcp $EXTERNAL_NET any -> $SQL_SERVERS 3339 (msg:"COMMUNITY ORACLE TNS Listener shutdown via iSQLPlus attempt"; flow:to_server,established; content:"isqlplus"; nocase; content:"COMMAND"; nocase; distance:0; content:"STOP"; nocase; distance:0; content:"LISTENER"; nocase; distance:0; pcre:"/isqlplus\x2F[^\r\n]*COMMAND\s*\x3D\s*STOP[^\r\n\x26]*LISTENER/si"; reference:bugtraq,15032; reference:url,www.red-database-security.com/advisory/oracle_isqlplus_shutdown.html; classtype:attempted-user; sid:100000166; rev:1;)

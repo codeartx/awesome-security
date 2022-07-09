@@ -1,0 +1,19 @@
+version: '3'
+
+# 使用 hydra 字典破解用户凭证，
+services:
+  # 漏洞靶场，用户名：admin,密码：password
+  web-dvwa:
+    container_name: web-dvwa
+    image: vulnerables/web-dvwa # https://hub.docker.com/r/vulnerables/web-dvwa
+    ports:
+      - 8080:80
+
+  hydra:
+    container_name: hydra
+    image: huafeihuao0/thc-hydra:9.3
+    depends_on:
+      - web-dvwa
+    volumes:
+      - ./data:/var/data/hydra
+    entrypoint: sleep 10000

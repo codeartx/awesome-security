@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  suricata:
+    image: jasonish/suricata:6.0.4 # https://hub.docker.com/r/jasonish/suricata
+    volumes:
+      - ./volumes/log:/var/log/suricata
+    cap_add:
+      - net_admin
+      - net_raw
+      - sys_nice
+    command: -i eth0
+

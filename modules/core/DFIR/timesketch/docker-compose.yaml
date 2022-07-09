@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  # http://localhost:8844
+  # 密码：timesketch
+  notebook:
+    container_name: notebook
+    image: us-docker.pkg.dev/osdfir-registry/timesketch/notebook:latest
+    ports:
+      - 8844:8844
+
+  ###########
+  timesketch-web:
+    image: us-docker.pkg.dev/osdfir-registry/timesketch/timesketch:${TIMESKETCH_VERSION}
+    environment:
+      - NUM_WSGI_WORKERS=${NUM_WSGI_WORKERS}
+    command: timesketch-web
+
+  timesketch-worker:
+    image: us-docker.pkg.dev/osdfir-registry/timesketch/timesketch:${TIMESKETCH_VERSION}
+    environment:
+      - WORKER_LOG_LEVEL=${WORKER_LOG_LEVEL}
+    command: timesketch-worker
+
+  elasticsearch:
+#    image: docker.elastic.co/elasticsearch/elasticsearch-oss:${ELASTIC_VERSION}
+    image: elasticsearch:${ELASTIC_VERSION}
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - TAKE_FILE_OWNERSHIP=1
+      - ES_JAVA_OPTS=-Xms${ELASTIC_MEM_USE_GB}g -Xmx${ELASTIC_MEM_USE_GB}g
+
+  postgres:
+    image: postgres:${POSTGRES_VERSION}
+    environment:
+      - POSTGRES_USER=timesketch
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+  redis:
+    image: redis:${REDIS_VERSION}
+    command: "redis-server"
+
+  nginx:
+    image: nginx:${NGINX_VERSION}
+    ports:
+      - "80:80"
+      - "443:443"

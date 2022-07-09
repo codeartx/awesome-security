@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  floss:
+    image: huafeihuao0/flare-floss:1.7.0
+    volumes:
+    - ./asset/ZeroAccess/ZeroAccess_xxx-porn-movie.avi.exe:/opt/ZeroAccess_xxx-porn-movie.avi.exe
+    - ./asset/ZeroAccess/dumped.dll:/opt/dumped.dll
+    entrypoint: sleep 10000

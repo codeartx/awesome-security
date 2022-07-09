@@ -1,0 +1,117 @@
+# Copyright 2006 Sourcefire, Inc. All Rights Reserved.
+# These rules are licensed under the GNU General Public License.
+# Please see the file LICENSE in this directory for more details.
+# $Id: community-bot.rules,v 1.5 2006/10/23 12:49:52 akirk Exp $
+
+
+# Some rules to look for botnets using popular bot software.
+# Contributed by David J. Bianco <david@vorant.com>
+#
+# A more detailed writeup can be found at:
+#
+#http://infosecpotpourri.blogspot.com/2006/03/detecting-common-botnets-with-snort.html
+#
+#
+# This rule merely looks for IRC traffic on any TCP port (by detecting
+# NICK change events, which occur at the beginning of the session) and
+# sets the is_proto_irc flowbit.  It does not actually generate any alerts
+# itself.
+alert tcp any any -> any any (msg:"COMMUNITY BOT IRC Traffic Detected By Nick Change"; flow: to_server,established; content:"NICK "; nocase; offset: 0; depth: 5; flowbits:set,community_is_proto_irc; flowbits: noalert; classtype:misc-activity; sid:100000240; rev:3;)
+
+# Using the aforementioned is_proto_irc flowbits, do some IRC checks.
+# This one looks for IRC servers running on the $HOME_NET
+alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"COMMUNITY BOT Internal IRC server detected"; flow: to_server,established; flowbits:isset,community_is_proto_irc; classtype: policy-violation; sid:100000241; rev:2;)
+
+# These rules look for specific Agobot/PhatBot commands on an IRC session
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.about command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.about"; classtype: trojan-activity; sid:100000242; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.die command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.die"; classtype: trojan-activity; sid:100000243; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.dns command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.dns"; classtype: trojan-activity; sid:100000244; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.execute command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.execute"; classtype: trojan-activity; sid:100000245; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.id command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.id"; classtype: trojan-activity; sid:100000246; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.nick command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.nick"; classtype: trojan-activity; sid:100000247; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.open command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.open"; classtype: trojan-activity; sid:100000248; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.remove command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.remove"; classtype: trojan-activity; sid:100000249; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.removeallbut command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.removeallbut"; classtype: trojan-activity; sid:100000250; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.rndnick command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.rndnick"; classtype: trojan-activity; sid:100000251; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.status command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.status"; classtype: trojan-activity; sid:100000252; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.sysinfo command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.sysinfo"; classtype: trojan-activity; sid:100000253; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.longuptime command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.longuptime"; classtype: trojan-activity; sid:100000254; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.highspeed command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.highspeed"; classtype: trojan-activity; sid:100000255; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.quit command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.quit"; classtype: trojan-activity; sid:100000256; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.flushdns command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.flushdns"; classtype: trojan-activity; sid:100000257; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.secure command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.secure"; classtype: trojan-activity; sid:100000258; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.unsecure command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.unsecure"; classtype: trojan-activity; sid:100000259; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT Agobot/PhatBot bot.command command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bot.command"; classtype: trojan-activity; sid:100000260; rev:2;)
+
+# Now some rules to look for SDBot traffic, also on established IRC sessions.
+# There are fewer of these, since the commands themselves aren't so distinctive
+# (don't want a lot of false positives on regular IRC conversations).
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SDBot killthread command"; flow: established; flowbits:isset,community_is_proto_irc; content:"killthread"; pcre:"/killthread\s+\d+\b/"; classtype: trojan-activity; sid:100000261; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SDBot cdkey command"; flow: established; flowbits:isset,community_is_proto_irc; content:"cdkey"; classtype: trojan-activity; sid:100000262; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SDBot getcdkey command"; flow: established; flowbits:isset,community_is_proto_irc; content:"getcdkey"; classtype: trojan-activity; sid:100000263; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SDBot rndnick command"; flow: established; flowbits:isset,community_is_proto_irc; content:"rndnick"; classtype: trojan-activity; sid:100000264; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SDBot c_rndnick command"; flow: established; flowbits:isset,community_is_proto_irc; content:"c_rndnick"; classtype: trojan-activity; sid:100000265; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SDBot c_nick command"; flow: established; flowbits:isset,community_is_proto_irc; content:"c_nick"; classtype: trojan-activity; sid:100000266; rev:2;)
+
+# Ok, on to SpyBot rules
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SpyBot stopspy  command"; flow: established; flowbits:isset,community_is_proto_irc; content:"stopspy"; classtype: trojan-activity; sid:100000267; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SpyBot redirectspy  command"; flow: established; flowbits:isset,community_is_proto_irc; content:"redirectspy"; classtype: trojan-activity; sid:100000268; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SpyBot loadclones command"; flow: established; flowbits:isset,community_is_proto_irc; content:"loadclones"; classtype: trojan-activity; sid:100000269; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SpyBot killclones command"; flow: established; flowbits:isset,community_is_proto_irc; content:"killclones"; classtype: trojan-activity; sid:100000270; rev:2;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT SpyBot rawclones  command"; flow: established; flowbits:isset,community_is_proto_irc; content:"rawclones"; classtype: trojan-activity; sid:100000271; rev:2;)
+
+# Finally GT Bot rules.  These try to account for the case where the bot
+# herder has redifined the command character away from the default '!'.
+# The only bug here is that this won't detect the ':' as the cmdchar.  IRC
+# uses the colon as part of the protocol message, and it was confusing
+# any message the started with (e.g.) "portscan" at the beginning of the line
+# and bot commands in the form of ":portscan".
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT GTBot ver command"; flow: established; flowbits:isset,community_is_proto_irc; content:"ver"; pcre:"/(?<![a-zA-Z0-9\x3A\s])ver/"; classtype: trojan-activity; sid:100000272; rev:3;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT GTBot info command"; flow: established; flowbits:isset,community_is_proto_irc; content:"info"; pcre:"/(?<![a-zA-Z0-9\x3A\s])info/"; classtype: trojan-activity; sid:100000273; rev:3;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT GTBot scan command"; flow: established; flowbits:isset,community_is_proto_irc; content:"scan"; pcre:"/(?<![a-zA-Z0-9\x3A\s])scan/"; classtype: trojan-activity; sid:100000274; rev:3;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT GTBot portscan command"; flow: established; flowbits:isset,community_is_proto_irc; content:"portscan"; pcre:"/(?<![a-zA-Z0-9\x3A\s])portscan/"; classtype: trojan-activity; sid:100000275; rev:3;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT GTBot stopscan command"; flow: established; flowbits:isset,community_is_proto_irc; content:"stopscan"; pcre:"/(?<![a-zA-Z0-9\x3A\s])stopscan/"; classtype: trojan-activity; sid:100000276; rev:3;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT GTBot packet command"; flow: established; flowbits:isset,community_is_proto_irc; content:"packet"; pcre:"/(?<![a-zA-Z0-9\x3A\s])packet/"; classtype: trojan-activity; sid:100000277; rev:3;)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"COMMUNITY BOT GTBot bnc command"; flow: established; flowbits:isset,community_is_proto_irc; content:"bnc"; pcre:"/(?<![a-zA-Z0-9\x3A\s])bnc/"; classtype: trojan-activity; sid:100000278; rev:3;)
+
+# Mytob chat rules by Philip Jew
+alert tcp $HOME_NET any -> $EXTERNAL_NET 8585 (msg:"COMMUNITY BOT Mytob IRC DCC file transfer request"; flow:established,to_server; content:"PRIVMSG "; nocase; content:" |3A|.DCC SEND"; nocase; distance:0; pcre:"/^\s*PRIVMSG/smi"; classtype:policy-violation; reference:url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99; sid:100000900; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 8585 (msg:"COMMUNITY BOT Mytob IRC DCC chat request"; flow:established,to_server; content:"PRIVMSG "; nocase; content:" |3A|.DCC CHAT chat"; nocase; distance:0; pcre:"/^\s*PRIVMSG/smi"; classtype:policy-violation; reference:url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99; sid:100000901; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 8585 (msg:"COMMUNITY BOT Mytob IRC channel join"; flow:established,to_server; content:"JOIN "; nocase; pcre:"/^\s*JOIN/smi"; classtype:policy-violation; reference:url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99; sid:100000902; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 8585 (msg:"COMMUNITY BOT Mytob IRC dns request"; flow:established,to_server; content:"USERHOST "; nocase; pcre:"/^\s*USERHOST/smi"; classtype:policy-violation; reference:url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99; sid:100000903; rev:1;)
+alert tcp $EXTERNAL_NET 8585 -> $HOME_NET any (msg:"COMMUNITY BOT Mytob IRC dns response"; flow:established,to_client; content:"|3A|"; offset:0; content:" 302 "; content:"=+"; classtype:policy-violation; reference:url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99; sid:100000904; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 8585 (msg:"COMMUNITY BOT Mytob IRC nick change"; flow:established,to_server; content:"NICK "; nocase; pcre:"/^\s*NICK/smi"; classtype:policy-violation; reference:url,www.symantec.com/security_response/writeup.jsp?docid=2006-052411-0911-99; sid:100000905; rev:1;)

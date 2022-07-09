@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  comply:
+    image: strongdm/comply
+    volumes:
+      - ./volumes/source:/source
+    ports:
+      - 4000:4000
