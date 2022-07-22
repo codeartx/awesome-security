@@ -9,12 +9,20 @@
 - 跨平台
   
   基于跨平台的轻量级容器化技术 Docker，可以在windows、macos、linux等系统中运行；
+
+- 跨语言
+	
+   屏蔽底层实现语言的差异，无需关心 java、python、golang、ruby等各类语言复杂的环境搭建，极大降低新手的入门难度。
   
 - 开箱即用
   
   所有镜像和脚本均反复验证，可以一键部署、测试，减少不必要的自建时间。
   
 当前开放 **150** 款左右，后续持续更新中...
+
+### 抽象安全模型
+
+![](./images/abstract-security-model.png)
 
 ### 技术栈脑图
 
@@ -38,7 +46,7 @@
 
 ![](./images/radar-admin-rules.png)
 
-### 网络安全 - 入侵检测 & 防御
+### 主机安全 - 入侵检测 & 防御
 
 - [wazuh](https://github.com/wazuh/wazuh)
 
