@@ -1,0 +1,90 @@
+version: '3'
+
+services:
+  fibo-mysql:
+    image: mysql:5.7
+    container_name: fibo-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    environment:
+      - "MYSQL_USER=fibo"
+      - "MYSQL_PASSWORD=password"
+      - "MYSQL_ROOT_PASSWORD=password"
+      - "MYSQL_DATABASE=riskmanage"
+    ports:
+      - 3306:3306
+
+  fibo-redis:
+    image: redis:5.0.6
+    container_name: fibo-redis
+    volumes:
+      - ./conf/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+  fibo-hbase:
+    image: harisekhon/hbase
+    container_name: fibo-hbase
+    ports:
+      - 2181:2181
+      - 18080:8080
+      - 8085:8085
+      - 9090:9090
+      - 9095:9095
+      - 16000:16000
+      - 16010:16010
+      - 16201:16201
+      - 16301:16301
+      - 16030:16030
+      - 16020:16020
+
+  fibo-manager:
+    image: huafeihuao0/fibo-manager:v1.2.1
+    container_name: fibo-manager
+    depends_on:
+      - fibo-mysql
+      - fibo-redis
+      - fibo-hbase
+    ports:
+      - 8080:8080
+
+  # 执行器 api
+  fibo-runner:
+    image: huafeihuao0/fibo-runner:v1.2.1
+    container_name: fibo-runner
+    depends_on:
+      - fibo-mysql
+      - fibo-redis
+      - fibo-hbase
+    ports:
+      - 8081:8081
+
+  # 数字决策平台
+  fibo-h5-enginex-manager:
+    image: huafeihuao0/h5-enginex-manager:v1.2.1
+    container_name: fibo-h5-enginex-manager
+    depends_on:
+      - fibo-manager
+    ports:
+      - 8082:80
+
+  # 权限系统
+  fibo-h5-auth-manager:
+    image: huafeihuao0/h5-auth-manager:v1.2.1
+    container_name: fibo-h5-auth-manager
+    depends_on:
+      - fibo-manager
+    ports:
+      - 8083:80
+
+  # 数据中心
+  fibo-h5-datax-manager:
+    image: huafeihuao0/h5-datax-manager:v1.2.1
+    container_name: fibo-h5-datax-manager
+    depends_on:
+      - fibo-manager
+    ports:
+      - 8084:80
+

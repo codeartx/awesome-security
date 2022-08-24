@@ -32,23 +32,36 @@
 
 ### 运维安全 - 堡垒机
 
-- [jumpserver](https://github.com/jumpserver/jumpserver)
+- [【19k】jumpserver](https://github.com/jumpserver/jumpserver)
 
 ![](./images/jumpserver-web-login.png)
 
 ![](./images/jumpserver-web-asset-detail.png)
 
+### 数据库安全 - SQL审计
+
+- [【6.9k】Yearning](https://github.com/cookieY/Yearning)
+
+![](./images/yearning-order.png)
+
+
 ### 业务安全 - 风控
 
-- [radar](https://gitee.com/freshday/radar)
+- [【2.3k】radar](https://gitee.com/freshday/radar)
 
 ![](./images/radar-admin-policy.png)
 
 ![](./images/radar-admin-rules.png)
 
+### 业务安全 - AI 决策引擎
+
+- [【618新】FiboRule](https://github.com/FiboAI/FiboRule)
+
+![](./images/fibo-datax-metrics.png)
+
 ### 主机安全 - 入侵检测 & 防御
 
-- [wazuh](https://github.com/wazuh/wazuh)
+- [【4.7k】wazuh](https://github.com/wazuh/wazuh)
 
 ![](./images/wazuh-agents-home.png)
 
