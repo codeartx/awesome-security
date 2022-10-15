@@ -24,7 +24,7 @@
 
 ![](./images/abstract-security-model.png)
 
-### 技术栈脑图
+### 技术栈脑图 [(完整版)](http://kjeek.com/security/awesome-security/)
 
 ![](./images/sec-arch.png)
 
